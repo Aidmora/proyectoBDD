@@ -5,6 +5,7 @@
 package com.mycompany.proyectobdd;
 
 import controlador.controladorMenuBar;
+import modelo.Conexion;
 import vista.frmContenedorPrincipal;
 
 

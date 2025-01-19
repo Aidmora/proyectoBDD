@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.DbPaciente;
+import modelo.Paciente;
 import vista.frmContenedorPrincipal;
 
 
@@ -40,8 +42,10 @@ public class controladorMenuBar  implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == frmConP.jMenuPaciente) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "Paciente");
+            Paciente pa= new Paciente();
+            DbPaciente dbPaciente= new DbPaciente();
+            controladorPaciente ctrPa= new controladorPaciente(pa, dbPaciente, frmConP);
+            ctrPa.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuUsuarios) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
