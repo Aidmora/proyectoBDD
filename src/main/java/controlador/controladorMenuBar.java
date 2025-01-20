@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.CitaMedicaNorte;
+import modelo.DbCitaMedicaNorte;
 import modelo.DbPaciente;
 import modelo.Paciente;
 import vista.frmContenedorPrincipal;
@@ -68,8 +70,10 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "MInactivo");
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaNorte) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "CMNorte");
+            CitaMedicaNorte citaMedicaNorte= new CitaMedicaNorte();
+            DbCitaMedicaNorte dbCitaMedicaNorte= new DbCitaMedicaNorte();
+            controladorCitaMedicaNorte conCitaMedicaNorte= new controladorCitaMedicaNorte(citaMedicaNorte, dbCitaMedicaNorte, frmConP);
+            conCitaMedicaNorte.iniciar(); 
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaSur) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();

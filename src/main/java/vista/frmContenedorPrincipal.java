@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -27,6 +28,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         initComponents();
         inicializacionItemsMenuBar();
         CardLayout cardLayout = new CardLayout();
+        spinHoraN.setEditor(new JSpinner.NumberEditor(spinHoraN, "00"));
+        spinMinN.setEditor(new JSpinner.NumberEditor(spinMinN, "00"));
     }
 
     private void inicializacionItemsMenuBar() {
@@ -179,6 +182,23 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanelCMNorte = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtCodigoCMN = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaComenCMN = new javax.swing.JTextArea();
+        jLabel20 = new javax.swing.JLabel();
+        dateChooserCMN = new com.toedter.calendar.JDateChooser();
+        jLabel21 = new javax.swing.JLabel();
+        spinHoraN = new javax.swing.JSpinner();
+        spinMinN = new javax.swing.JSpinner();
+        jLabel22 = new javax.swing.JLabel();
+        txtSucursalCMN = new javax.swing.JTextField();
+        btnEliminarCMN = new javax.swing.JButton();
+        btnLimpiarCMN = new javax.swing.JButton();
+        btnGuardarCMN2 = new javax.swing.JButton();
+        btnModificarCMN = new javax.swing.JButton();
+        btnBuscarCMN1 = new javax.swing.JButton();
         jPanelPagoP = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanelPagoR = new javax.swing.JPanel();
@@ -343,11 +363,87 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelCMNorte.setLayout(null);
 
-        jLabel8.setFont(new java.awt.Font("Rondalo", 0, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Cita Médica Norte");
+        jLabel8.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Comentario");
         jPanelCMNorte.add(jLabel8);
-        jLabel8.setBounds(120, 110, 150, 15);
+        jLabel8.setBounds(170, 160, 140, 15);
+
+        jLabel18.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Citas Médicas de la Surcursal - Norte");
+        jPanelCMNorte.add(jLabel18);
+        jLabel18.setBounds(230, 70, 260, 15);
+        jPanelCMNorte.add(txtCodigoCMN);
+        txtCodigoCMN.setBounds(170, 130, 130, 22);
+
+        jLabel19.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel19.setText("Sucursal");
+        jPanelCMNorte.add(jLabel19);
+        jLabel19.setBounds(370, 210, 140, 15);
+
+        txtAreaComenCMN.setColumns(20);
+        txtAreaComenCMN.setRows(5);
+        jScrollPane1.setViewportView(txtAreaComenCMN);
+
+        jPanelCMNorte.add(jScrollPane1);
+        jScrollPane1.setBounds(170, 180, 130, 80);
+
+        jLabel20.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel20.setText("Hora de la Cita Médica ");
+        jPanelCMNorte.add(jLabel20);
+        jLabel20.setBounds(370, 160, 140, 15);
+        jPanelCMNorte.add(dateChooserCMN);
+        dateChooserCMN.setBounds(370, 130, 130, 22);
+
+        jLabel21.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel21.setText("Código de la Cita Médica");
+        jPanelCMNorte.add(jLabel21);
+        jLabel21.setBounds(170, 110, 140, 15);
+
+        spinHoraN.setModel(new javax.swing.SpinnerNumberModel(0, 0, 23, 1));
+        jPanelCMNorte.add(spinHoraN);
+        spinHoraN.setBounds(370, 180, 64, 22);
+
+        spinMinN.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 5));
+        jPanelCMNorte.add(spinMinN);
+        spinMinN.setBounds(440, 180, 64, 22);
+
+        jLabel22.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel22.setText("Fecha de la Cita Médica ");
+        jPanelCMNorte.add(jLabel22);
+        jLabel22.setBounds(370, 110, 140, 15);
+        jPanelCMNorte.add(txtSucursalCMN);
+        txtSucursalCMN.setBounds(370, 230, 130, 22);
+
+        btnEliminarCMN.setBackground(new java.awt.Color(204, 204, 204));
+        btnEliminarCMN.setText("Eliminar");
+        jPanelCMNorte.add(btnEliminarCMN);
+        btnEliminarCMN.setBounds(170, 310, 130, 23);
+
+        btnLimpiarCMN.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiarCMN.setText("Limpiar");
+        jPanelCMNorte.add(btnLimpiarCMN);
+        btnLimpiarCMN.setBounds(280, 350, 130, 23);
+
+        btnGuardarCMN2.setBackground(new java.awt.Color(204, 204, 204));
+        btnGuardarCMN2.setText("Guardar");
+        jPanelCMNorte.add(btnGuardarCMN2);
+        btnGuardarCMN2.setBounds(170, 280, 130, 23);
+
+        btnModificarCMN.setBackground(new java.awt.Color(204, 204, 204));
+        btnModificarCMN.setText("Modificar");
+        jPanelCMNorte.add(btnModificarCMN);
+        btnModificarCMN.setBounds(370, 280, 130, 23);
+
+        btnBuscarCMN1.setBackground(new java.awt.Color(204, 204, 204));
+        btnBuscarCMN1.setText("Buscar");
+        jPanelCMNorte.add(btnBuscarCMN1);
+        btnBuscarCMN1.setBounds(370, 310, 130, 23);
 
         jPanelPrincipal.add(jPanelCMNorte, "CMNorte");
 
@@ -401,11 +497,17 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBuscarCMN1;
     public javax.swing.JButton btnBuscarPa;
+    public javax.swing.JButton btnEliminarCMN;
     public javax.swing.JButton btnEliminarPa;
+    public javax.swing.JButton btnGuardarCMN2;
     public javax.swing.JButton btnGuardarPa;
+    public javax.swing.JButton btnLimpiarCMN;
     public javax.swing.JButton btnLimpiarPa;
+    public javax.swing.JButton btnModificarCMN;
     public javax.swing.JButton btnModificarPa;
+    public com.toedter.calendar.JDateChooser dateChooserCMN;
     public com.toedter.calendar.JDateChooser dateFechaNac;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -416,7 +518,12 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -424,7 +531,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanelCMNorte;
+    public javax.swing.JPanel jPanelCMNorte;
     private javax.swing.JPanel jPanelCMSur;
     private javax.swing.JPanel jPanelMedicoActivo;
     private javax.swing.JPanel jPanelMedicoInactivo;
@@ -435,11 +542,17 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTCoporal;
     private javax.swing.JPanel jPanelTFacial;
     public javax.swing.JPanel jPanelUsuario;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar mbMenuBar;
+    public javax.swing.JSpinner spinHoraN;
+    public javax.swing.JSpinner spinMinN;
+    public javax.swing.JTextArea txtAreaComenCMN;
     public javax.swing.JTextField txtCedula;
+    public javax.swing.JTextField txtCodigoCMN;
     public javax.swing.JTextField txtCorreoElec;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNumTel;
+    public javax.swing.JTextField txtSucursalCMN;
     public javax.swing.JTextField txtUbicacion;
     // End of variables declaration//GEN-END:variables
  // Declaración de los menús

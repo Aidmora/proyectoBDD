@@ -8,26 +8,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
+
 /**
  *
  * @author RIBZ
  */
-public class DbPaciente extends Conexion{
-    public boolean guardar (Paciente p){
+public class DbCitaMedicaNorte extends Conexion {
+    //guardar 
+    public boolean guardar (CitaMedicaNorte cms){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "INSERT INTO Paciente (numero_cedula,fecha_nacimiento,"
-                + "numero_telefono,correo_electronico, nombre,ubicacion)"
-                + "VALUES (?,?,?,?,?,?)";
+        String sql= "INSERT INTO CitaMedica_Norte (codigo_cita,comentario,"
+                + "fecha_cita,hora_cita, sucursal)"
+                + "VALUES (?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, p.getNumeroCedula());
-            ps.setDate(2, p.getFechaNacimiento());
-            ps.setString(3, p.getNumeroTelefono());
-            ps.setString(4, p.getCorreoElectronico());
-            ps.setString(5, p.getNombre());
-            ps.setString(6, p.getUbicacion());
+            ps.setInt(1, cms.getCodigoCita());
+            ps.setString(2, cms.getComentario());
+            ps.setDate(3, cms.getFechaCita());
+            ps.setTimestamp(4, cms.getHoraCita());
+            ps.setString(5, cms.getSucursal());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -41,25 +41,19 @@ public class DbPaciente extends Conexion{
             }
         }
     }
-    //eliminar
-    public boolean modificar (Paciente p){
+    //modificar
+    public boolean modificar (CitaMedicaNorte cms){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql = "UPDATE Paciente "
-           + "SET fecha_nacimiento = ?, "
-           + "    numero_telefono = ?, "
-           + "    correo_electronico = ?, "
-           + "    nombre = ?, "
-           + "    ubicacion = ? "
-           + "WHERE numero_cedula LIKE ?";
+        String sql= "UPDATE CitaMedica_Norte SET comentario= ?,"
+                + "fecha_cita= ?,hora_cita= ?, sucursal=? WHERE codigo_cita= ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setDate(1, p.getFechaNacimiento());
-            ps.setString(2, p.getNumeroTelefono());
-            ps.setString(3, p.getCorreoElectronico());
-            ps.setString(4, p.getNombre());
-            ps.setString(5, p.getUbicacion());
-            ps.setString(6, p.getNumeroCedula());
+            ps.setString(1, cms.getComentario());
+            ps.setDate(2, cms.getFechaCita());
+            ps.setTimestamp(3, cms.getHoraCita());
+            ps.setString(4, cms.getSucursal());
+            ps.setInt(5, cms.getCodigoCita());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -73,14 +67,14 @@ public class DbPaciente extends Conexion{
             }
         }
     }
-    //eliminar
-    public boolean eliminar (Paciente p){
+    //eliminar 
+    public boolean eliminar (CitaMedicaNorte cms){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "DELETE FROM Paciente WHERE numero_cedula LIKE ?";
+        String sql= "DELETE FROM CitaMedica_Norte WHERE codigo_cita= ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, "%"+p.getNumeroCedula()+"%");
+            ps.setInt(1, cms.getCodigoCita());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -94,23 +88,22 @@ public class DbPaciente extends Conexion{
             }
         }
     }
-    //buscar
-    public boolean buscar (Paciente p){
+    //buscar 
+    public boolean buscar (CitaMedicaNorte cms){
         PreparedStatement ps; 
         ResultSet rs;
         Connection con= getConexion();
-        String sql= "SELECT * FROM Paciente WHERE numero_cedula LIKE ?";
+        String sql= "SELECT * FROM CitaMedica_Norte WHERE codigo_cita= ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, "%"+p.getNumeroCedula()+"%");
+            ps.setInt(1, cms.getCodigoCita());
             rs= ps.executeQuery();
             if (rs.next()) {
-                p.setNumeroCedula(rs.getString("numero_cedula"));
-                p.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
-                p.setNumeroTelefono(rs.getString("numero_telefono"));
-                p.setCorreoElectronico(rs.getString("correo_electronico"));
-                p.setNombre(rs.getString("nombre"));
-                p.setUbicacion(rs.getString("ubicacion"));
+                cms.setCodigoCita(Integer.parseInt(rs.getString("codigo_cita")));
+                cms.setComentario(rs.getString("comentario"));
+                cms.setFechaCita(rs.getDate("fecha_cita"));
+                cms.setHoraCita(rs.getTimestamp("hora_cita"));
+                cms.setSucursal(rs.getString("sucursal"));
             }
             return true;
         } catch (SQLException e) {
@@ -124,4 +117,5 @@ public class DbPaciente extends Conexion{
             }
         }
     }
+    
 }

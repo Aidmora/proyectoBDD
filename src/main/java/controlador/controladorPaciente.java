@@ -45,7 +45,12 @@ public class controladorPaciente implements ActionListener{
         //Guardar
         if(e.getSource()== frmContenedorPrincipal.btnGuardarPa){
            pa.setNumeroCedula(frmContenedorPrincipal.txtCedula.getText().trim());
-           pa.setFechaNacimiento(new java.sql.Date(frmContenedorPrincipal.dateFechaNac.getDate().getTime()));
+            java.util.Date fecha = frmContenedorPrincipal.dateChooserCMN.getDate();
+            if (fecha == null) {
+                JOptionPane.showMessageDialog(null, "Seleccione la fecha de la cita");
+                return; // o no guardes
+            }
+           pa.setFechaNacimiento(new Date(fecha.getTime()));
            pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTel.getText().trim());
            pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElec.getText().trim());
            pa.setNombre(frmContenedorPrincipal.txtNombre.getText().trim());
@@ -60,7 +65,12 @@ public class controladorPaciente implements ActionListener{
         }
         //Modificar
         if(e.getSource()== frmContenedorPrincipal.btnModificarPa){
-           pa.setFechaNacimiento(new java.sql.Date(frmContenedorPrincipal.dateFechaNac.getDate().getTime()));
+            java.util.Date fecha = frmContenedorPrincipal.dateChooserCMN.getDate();
+            if (fecha == null) {
+                JOptionPane.showMessageDialog(null, "Seleccione la fecha de la cita");
+                return; // o no guardes
+            }
+           pa.setFechaNacimiento(new Date(fecha.getTime()));
            pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTel.getText().trim());
            pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElec.getText().trim());
            pa.setNombre(frmContenedorPrincipal.txtNombre.getText().trim());
