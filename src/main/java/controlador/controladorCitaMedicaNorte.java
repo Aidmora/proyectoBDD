@@ -45,8 +45,8 @@ public class controladorCitaMedicaNorte implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //guardar
         if (e.getSource() == frmContenedorPrincipal.btnGuardarCMN2) {
-            citaMedicaNorte.setCodigoCita(Integer.parseInt(frmContenedorPrincipal.txtCodigoCMN.getText()));
-            citaMedicaNorte.setComentario(frmContenedorPrincipal.txtAreaComenCMN.getText());
+            citaMedicaNorte.setCodigoCita(Integer.parseInt(frmContenedorPrincipal.txtCodigoCMN.getText().trim()));
+            citaMedicaNorte.setComentario(frmContenedorPrincipal.txtAreaComenCMN.getText().trim());
             java.util.Date fecha = frmContenedorPrincipal.dateChooserCMN.getDate();
             if (fecha == null) {
                 JOptionPane.showMessageDialog(null, "Seleccione la fecha de la cita");
@@ -59,7 +59,7 @@ public class controladorCitaMedicaNorte implements ActionListener{
                 return;
             }
             citaMedicaNorte.setHoraCita(Timestamp.valueOf(fechaHoraStr));
-            citaMedicaNorte.setSucursal(frmContenedorPrincipal.txtSucursalCMN.getText());
+            citaMedicaNorte.setSucursal(frmContenedorPrincipal.txtSucursalCMN.getText().toUpperCase().trim());
             if (citaMeSDb.guardar(citaMedicaNorte)) {
                 JOptionPane.showMessageDialog(null, "Cita medica guardada con exito");
                 limpiar();
@@ -72,7 +72,7 @@ public class controladorCitaMedicaNorte implements ActionListener{
         }
         //modificar
         if (e.getSource() == frmContenedorPrincipal.btnModificarCMN) {
-            citaMedicaNorte.setComentario(frmContenedorPrincipal.txtAreaComenCMN.getText());
+            citaMedicaNorte.setComentario(frmContenedorPrincipal.txtAreaComenCMN.getText().trim());
             java.util.Date fecha = frmContenedorPrincipal.dateChooserCMN.getDate();
             if (fecha == null) {
                 JOptionPane.showMessageDialog(null, "Seleccione la fecha de la cita");
@@ -85,8 +85,8 @@ public class controladorCitaMedicaNorte implements ActionListener{
                 return;
             }
             citaMedicaNorte.setHoraCita(Timestamp.valueOf(fechaHoraStr));
-            citaMedicaNorte.setSucursal(frmContenedorPrincipal.txtSucursalCMN.getText());
-            citaMedicaNorte.setCodigoCita(Integer.parseInt(frmContenedorPrincipal.txtCodigoCMN.getText()));
+            citaMedicaNorte.setSucursal(frmContenedorPrincipal.txtSucursalCMN.getText().toUpperCase().trim());
+            citaMedicaNorte.setCodigoCita(Integer.parseInt(frmContenedorPrincipal.txtCodigoCMN.getText().trim()));
             if (citaMeSDb.modificar(citaMedicaNorte)) {
                 JOptionPane.showMessageDialog(null, "Cita medica modificada con éxito");
                 limpiar();

@@ -12,7 +12,9 @@ import javax.swing.JPanel;
 import modelo.CitaMedicaNorte;
 import modelo.DbCitaMedicaNorte;
 import modelo.DbPaciente;
+import modelo.DbTratamientoFacial;
 import modelo.Paciente;
+import modelo.TratamientoFacial;
 import vista.frmContenedorPrincipal;
 
 
@@ -54,8 +56,10 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "Usuario");
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosFacial) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "TFacial");
+            TratamientoFacial tratamientoFacial= new TratamientoFacial();
+            DbTratamientoFacial dbTratamientoFacial= new DbTratamientoFacial();
+            controladorTratamientoFacial ctrF= new controladorTratamientoFacial(tratamientoFacial, dbTratamientoFacial, frmConP);
+            ctrF.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosCorporal) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();

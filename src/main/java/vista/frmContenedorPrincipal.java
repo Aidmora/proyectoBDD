@@ -172,6 +172,39 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         txtCorreoElec = new javax.swing.JTextField();
         jPanelTFacial = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        txtNombreTF = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txtTipoTF = new javax.swing.JTextField();
+        txtPrecioTF = new javax.swing.JFormattedTextField();
+        jPanelPaciente1 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        btnModificarPa1 = new javax.swing.JButton();
+        txtCedula1 = new javax.swing.JTextField();
+        txtNumTel1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        dateFechaNac1 = new com.toedter.calendar.JDateChooser();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        txtNombre1 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        txtUbicacion1 = new javax.swing.JTextField();
+        btnGuardarPa1 = new javax.swing.JButton();
+        btnEliminarPa1 = new javax.swing.JButton();
+        btnLimpiarPa1 = new javax.swing.JButton();
+        btnBuscarPa1 = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
+        txtCorreoElec1 = new javax.swing.JTextField();
+        btnModificarTF = new javax.swing.JButton();
+        btnLimpiarTF = new javax.swing.JButton();
+        btnGuardarTF = new javax.swing.JButton();
+        btnBuscarTF = new javax.swing.JButton();
+        btnEliminarTF = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        txtCodigoTF = new javax.swing.JTextField();
         jPanelTCoporal = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanelMedicoActivo = new javax.swing.JPanel();
@@ -313,11 +346,159 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelTFacial.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Rondalo", 0, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Tratamientos Faciales");
+        jLabel3.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Precio (ej: 12.00)");
         jPanelTFacial.add(jLabel3);
-        jLabel3.setBounds(120, 110, 150, 15);
+        jLabel3.setBounds(370, 160, 120, 20);
+
+        jLabel24.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Tratamientos Faciales");
+        jPanelTFacial.add(jLabel24);
+        jLabel24.setBounds(260, 70, 150, 15);
+
+        jLabel23.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel23.setText("Nombre");
+        jPanelTFacial.add(jLabel23);
+        jLabel23.setBounds(170, 110, 60, 15);
+        jPanelTFacial.add(txtNombreTF);
+        txtNombreTF.setBounds(170, 130, 130, 22);
+
+        jLabel25.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel25.setText("Tipo");
+        jPanelTFacial.add(jLabel25);
+        jLabel25.setBounds(370, 110, 130, 15);
+        jPanelTFacial.add(txtTipoTF);
+        txtTipoTF.setBounds(370, 130, 130, 22);
+        jPanelTFacial.add(txtPrecioTF);
+        txtPrecioTF.setBounds(370, 180, 126, 22);
+
+        jPanelPaciente1.setBackground(new java.awt.Color(255, 204, 255));
+        jPanelPaciente1.setLayout(null);
+
+        jLabel26.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel26.setText("Número de Teléfono ");
+        jPanelPaciente1.add(jLabel26);
+        jLabel26.setBounds(170, 210, 130, 15);
+
+        btnModificarPa1.setBackground(new java.awt.Color(204, 204, 204));
+        btnModificarPa1.setText("Modificar");
+        jPanelPaciente1.add(btnModificarPa1);
+        btnModificarPa1.setBounds(370, 310, 130, 23);
+        jPanelPaciente1.add(txtCedula1);
+        txtCedula1.setBounds(170, 130, 130, 22);
+        jPanelPaciente1.add(txtNumTel1);
+        txtNumTel1.setBounds(170, 230, 130, 22);
+
+        jLabel27.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("PACIENTE");
+        jPanelPaciente1.add(jLabel27);
+        jLabel27.setBounds(260, 70, 150, 15);
+        jPanelPaciente1.add(dateFechaNac1);
+        dateFechaNac1.setBounds(170, 180, 130, 22);
+
+        jLabel28.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel28.setText("Fecha de Nacimiento ");
+        jPanelPaciente1.add(jLabel28);
+        jLabel28.setBounds(170, 160, 130, 15);
+
+        jLabel29.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel29.setText("Correo Electrónico");
+        jPanelPaciente1.add(jLabel29);
+        jLabel29.setBounds(370, 210, 110, 15);
+
+        jLabel30.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Cédula");
+        jPanelPaciente1.add(jLabel30);
+        jLabel30.setBounds(170, 110, 45, 15);
+
+        jLabel31.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Cédula");
+        jPanelPaciente1.add(jLabel31);
+        jLabel31.setBounds(170, 110, 45, 15);
+        jPanelPaciente1.add(txtNombre1);
+        txtNombre1.setBounds(370, 130, 130, 22);
+
+        jLabel32.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("Nombre");
+        jPanelPaciente1.add(jLabel32);
+        jLabel32.setBounds(370, 110, 45, 15);
+        jPanelPaciente1.add(txtUbicacion1);
+        txtUbicacion1.setBounds(370, 180, 130, 22);
+
+        btnGuardarPa1.setBackground(new java.awt.Color(204, 204, 204));
+        btnGuardarPa1.setText("Guardar");
+        jPanelPaciente1.add(btnGuardarPa1);
+        btnGuardarPa1.setBounds(170, 280, 130, 23);
+
+        btnEliminarPa1.setBackground(new java.awt.Color(204, 204, 204));
+        btnEliminarPa1.setText("Eliminar");
+        jPanelPaciente1.add(btnEliminarPa1);
+        btnEliminarPa1.setBounds(170, 310, 130, 23);
+
+        btnLimpiarPa1.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiarPa1.setText("Limpiar");
+        jPanelPaciente1.add(btnLimpiarPa1);
+        btnLimpiarPa1.setBounds(270, 360, 130, 23);
+
+        btnBuscarPa1.setBackground(new java.awt.Color(204, 204, 204));
+        btnBuscarPa1.setText("Buscar");
+        jPanelPaciente1.add(btnBuscarPa1);
+        btnBuscarPa1.setBounds(370, 280, 130, 23);
+
+        jLabel33.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("Ubicación");
+        jPanelPaciente1.add(jLabel33);
+        jLabel33.setBounds(370, 160, 110, 15);
+        jPanelPaciente1.add(txtCorreoElec1);
+        txtCorreoElec1.setBounds(370, 230, 130, 22);
+
+        jPanelTFacial.add(jPanelPaciente1);
+        jPanelPaciente1.setBounds(0, 0, 0, 0);
+
+        btnModificarTF.setBackground(new java.awt.Color(204, 204, 204));
+        btnModificarTF.setText("Modificar");
+        jPanelTFacial.add(btnModificarTF);
+        btnModificarTF.setBounds(380, 250, 130, 23);
+
+        btnLimpiarTF.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiarTF.setText("Limpiar");
+        jPanelTFacial.add(btnLimpiarTF);
+        btnLimpiarTF.setBounds(270, 330, 130, 23);
+
+        btnGuardarTF.setBackground(new java.awt.Color(204, 204, 204));
+        btnGuardarTF.setText("Guardar");
+        jPanelTFacial.add(btnGuardarTF);
+        btnGuardarTF.setBounds(170, 250, 130, 23);
+
+        btnBuscarTF.setBackground(new java.awt.Color(204, 204, 204));
+        btnBuscarTF.setText("Buscar");
+        jPanelTFacial.add(btnBuscarTF);
+        btnBuscarTF.setBounds(380, 290, 130, 23);
+
+        btnEliminarTF.setBackground(new java.awt.Color(204, 204, 204));
+        btnEliminarTF.setText("Eliminar");
+        jPanelTFacial.add(btnEliminarTF);
+        btnEliminarTF.setBounds(170, 290, 130, 23);
+
+        jLabel34.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel34.setText("Código ");
+        jPanelTFacial.add(jLabel34);
+        jLabel34.setBounds(170, 160, 60, 15);
+        jPanelTFacial.add(txtCodigoTF);
+        txtCodigoTF.setBounds(170, 180, 130, 22);
 
         jPanelPrincipal.add(jPanelTFacial, "TFacial");
 
@@ -499,16 +680,27 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscarCMN1;
     public javax.swing.JButton btnBuscarPa;
+    public javax.swing.JButton btnBuscarPa1;
+    public javax.swing.JButton btnBuscarTF;
     public javax.swing.JButton btnEliminarCMN;
     public javax.swing.JButton btnEliminarPa;
+    public javax.swing.JButton btnEliminarPa1;
+    public javax.swing.JButton btnEliminarTF;
     public javax.swing.JButton btnGuardarCMN2;
     public javax.swing.JButton btnGuardarPa;
+    public javax.swing.JButton btnGuardarPa1;
+    public javax.swing.JButton btnGuardarTF;
     public javax.swing.JButton btnLimpiarCMN;
     public javax.swing.JButton btnLimpiarPa;
+    public javax.swing.JButton btnLimpiarPa1;
+    public javax.swing.JButton btnLimpiarTF;
     public javax.swing.JButton btnModificarCMN;
     public javax.swing.JButton btnModificarPa;
+    public javax.swing.JButton btnModificarPa1;
+    public javax.swing.JButton btnModificarTF;
     public com.toedter.calendar.JDateChooser dateChooserCMN;
     public com.toedter.calendar.JDateChooser dateFechaNac;
+    public com.toedter.calendar.JDateChooser dateFechaNac1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -524,7 +716,19 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -536,11 +740,12 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMedicoActivo;
     private javax.swing.JPanel jPanelMedicoInactivo;
     public javax.swing.JPanel jPanelPaciente;
+    public javax.swing.JPanel jPanelPaciente1;
     private javax.swing.JPanel jPanelPagoP;
     private javax.swing.JPanel jPanelPagoR;
     public javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelTCoporal;
-    private javax.swing.JPanel jPanelTFacial;
+    public javax.swing.JPanel jPanelTFacial;
     public javax.swing.JPanel jPanelUsuario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar mbMenuBar;
@@ -548,12 +753,21 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JSpinner spinMinN;
     public javax.swing.JTextArea txtAreaComenCMN;
     public javax.swing.JTextField txtCedula;
+    public javax.swing.JTextField txtCedula1;
     public javax.swing.JTextField txtCodigoCMN;
+    public javax.swing.JTextField txtCodigoTF;
     public javax.swing.JTextField txtCorreoElec;
+    public javax.swing.JTextField txtCorreoElec1;
     public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtNombre1;
+    public javax.swing.JTextField txtNombreTF;
     public javax.swing.JTextField txtNumTel;
+    public javax.swing.JTextField txtNumTel1;
+    public javax.swing.JFormattedTextField txtPrecioTF;
     public javax.swing.JTextField txtSucursalCMN;
+    public javax.swing.JTextField txtTipoTF;
     public javax.swing.JTextField txtUbicacion;
+    public javax.swing.JTextField txtUbicacion1;
     // End of variables declaration//GEN-END:variables
  // Declaración de los menús
     public javax.swing.JMenu jMenuPago;
