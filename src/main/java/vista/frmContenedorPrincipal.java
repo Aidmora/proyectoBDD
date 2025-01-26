@@ -144,6 +144,24 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jPanelPrincipal = new javax.swing.JPanel();
         jPanelUsuario = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtEstadoUs = new javax.swing.JTextField();
+        txtCorreoUs = new javax.swing.JTextField();
+        txtIdUs = new javax.swing.JTextField();
+        btnBuscarUs = new javax.swing.JButton();
+        listRolUs = new javax.swing.JComboBox<>();
+        btnModificarUs = new javax.swing.JButton();
+        btnEliminarUs = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtNuevaPassUs = new javax.swing.JPasswordField();
+        txtConfNuevaPassUs = new javax.swing.JPasswordField();
+        btnGuardarUs = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        txtNombreUs = new javax.swing.JTextField();
         jPanelPaciente = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanelTFacial = new javax.swing.JPanel();
@@ -160,25 +178,108 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanelPagoP = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        txtIdPP = new javax.swing.JTextField();
+        txtFechaPP = new javax.swing.JTextField();
+        txtEstadoPP = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        btnGuardarPP = new javax.swing.JButton();
+        btnModificarPP = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        txtCantidadPP = new javax.swing.JTextField();
+        btnBuscarPP = new javax.swing.JButton();
+        btnEliminarPP = new javax.swing.JButton();
         jPanelPagoR = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         mbMenuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 1000));
-        setPreferredSize(new java.awt.Dimension(700, 500));
-        getContentPane().setLayout(new java.awt.BorderLayout());
+        setMinimumSize(new java.awt.Dimension(800, 600));
 
         jPanelPrincipal.setLayout(new java.awt.CardLayout());
 
         jPanelUsuario.setBackground(new java.awt.Color(204, 255, 255));
         jPanelUsuario.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Rondalo", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("USUARIOS");
+        jLabel2.setText("Nuevo usuario");
         jPanelUsuario.add(jLabel2);
-        jLabel2.setBounds(0, 0, 400, 299);
+        jLabel2.setBounds(290, 380, 140, 22);
+
+        jLabel11.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel11.setText("Confirmar contraseña");
+        jPanelUsuario.add(jLabel11);
+        jLabel11.setBounds(410, 410, 160, 16);
+
+        jLabel13.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel13.setText("Correo Electrónico");
+        jPanelUsuario.add(jLabel13);
+        jLabel13.setBounds(400, 170, 150, 16);
+
+        jLabel15.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel15.setText("Estado");
+        jPanelUsuario.add(jLabel15);
+        jLabel15.setBounds(150, 260, 70, 16);
+        jPanelUsuario.add(txtEstadoUs);
+        txtEstadoUs.setBounds(150, 280, 140, 28);
+        jPanelUsuario.add(txtCorreoUs);
+        txtCorreoUs.setBounds(400, 190, 180, 28);
+        jPanelUsuario.add(txtIdUs);
+        txtIdUs.setBounds(0, 10, 10, 28);
+
+        btnBuscarUs.setText("Buscar");
+        jPanelUsuario.add(btnBuscarUs);
+        btnBuscarUs.setBounds(220, 330, 80, 28);
+
+        listRolUs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario", "Médico" }));
+        listRolUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listRolUsActionPerformed(evt);
+            }
+        });
+        jPanelUsuario.add(listRolUs);
+        listRolUs.setBounds(400, 280, 180, 26);
+
+        btnModificarUs.setText("Modificar");
+        jPanelUsuario.add(btnModificarUs);
+        btnModificarUs.setBounds(420, 330, 80, 28);
+
+        btnEliminarUs.setText("Eliminar");
+        jPanelUsuario.add(btnEliminarUs);
+        btnEliminarUs.setBounds(320, 330, 80, 28);
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("USUARIOS");
+        jPanelUsuario.add(jLabel14);
+        jLabel14.setBounds(290, 50, 140, 22);
+
+        jLabel16.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel16.setText("Rol");
+        jPanelUsuario.add(jLabel16);
+        jLabel16.setBounds(400, 260, 70, 16);
+
+        jLabel17.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel17.setText("Contraseña");
+        jPanelUsuario.add(jLabel17);
+        jLabel17.setBounds(160, 410, 120, 16);
+        jPanelUsuario.add(txtNuevaPassUs);
+        txtNuevaPassUs.setBounds(160, 440, 190, 16);
+        jPanelUsuario.add(txtConfNuevaPassUs);
+        txtConfNuevaPassUs.setBounds(410, 440, 190, 16);
+
+        btnGuardarUs.setText("Guardar");
+        jPanelUsuario.add(btnGuardarUs);
+        btnGuardarUs.setBounds(320, 490, 110, 28);
+
+        jLabel18.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel18.setText("Nombre");
+        jPanelUsuario.add(jLabel18);
+        jLabel18.setBounds(150, 170, 70, 16);
+        jPanelUsuario.add(txtNombreUs);
+        txtNombreUs.setBounds(150, 190, 140, 28);
 
         jPanelPrincipal.add(jPanelUsuario, "Usuario");
 
@@ -189,7 +290,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PACIENTE");
         jPanelPaciente.add(jLabel1);
-        jLabel1.setBounds(170, 100, 45, 15);
+        jLabel1.setBounds(170, 100, 59, 16);
 
         jPanelPrincipal.add(jPanelPaciente, "Paciente");
 
@@ -199,7 +300,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Tratamientos Faciales");
         jPanelTFacial.add(jLabel3);
-        jLabel3.setBounds(120, 110, 150, 15);
+        jLabel3.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelTFacial, "TFacial");
 
@@ -209,7 +310,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Tratamientos Corporales");
         jPanelTCoporal.add(jLabel4);
-        jLabel4.setBounds(120, 110, 150, 15);
+        jLabel4.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelTCoporal, "TCorporal");
 
@@ -219,7 +320,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Médicos Activos");
         jPanelMedicoActivo.add(jLabel5);
-        jLabel5.setBounds(120, 110, 150, 15);
+        jLabel5.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelMedicoActivo, "MActivo");
 
@@ -229,7 +330,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Médicos Inactivos");
         jPanelMedicoInactivo.add(jLabel6);
-        jLabel6.setBounds(120, 110, 150, 15);
+        jLabel6.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelMedicoInactivo, "MInactivo");
 
@@ -239,7 +340,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Cita Médica Sur");
         jPanelCMSur.add(jLabel7);
-        jLabel7.setBounds(120, 110, 150, 15);
+        jLabel7.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelCMSur, "CMSur");
 
@@ -249,17 +350,63 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Cita Médica Norte");
         jPanelCMNorte.add(jLabel8);
-        jLabel8.setBounds(120, 110, 150, 15);
+        jLabel8.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelCMNorte, "CMNorte");
 
         jPanelPagoP.setLayout(null);
 
-        jLabel9.setFont(new java.awt.Font("Rondalo", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Rondalo", 1, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Pago Pendiente");
         jPanelPagoP.add(jLabel9);
-        jLabel9.setBounds(120, 110, 150, 15);
+        jLabel9.setBounds(320, 80, 180, 40);
+
+        txtIdPP.setText(" ");
+        jPanelPagoP.add(txtIdPP);
+        txtIdPP.setBounds(280, 170, 80, 28);
+
+        txtFechaPP.setText(" ");
+        jPanelPagoP.add(txtFechaPP);
+        txtFechaPP.setBounds(530, 170, 100, 28);
+
+        txtEstadoPP.setText(" ");
+        jPanelPagoP.add(txtEstadoPP);
+        txtEstadoPP.setBounds(530, 210, 100, 28);
+
+        jLabel12.setText("Id");
+        jPanelPagoP.add(jLabel12);
+        jLabel12.setBounds(260, 170, 10, 16);
+
+        jLabel19.setText("Fecha Límite (dd/mm/yyyy)");
+        jPanelPagoP.add(jLabel19);
+        jLabel19.setBounds(380, 170, 144, 16);
+
+        jLabel20.setText("Cantidad");
+        jPanelPagoP.add(jLabel20);
+        jLabel20.setBounds(220, 210, 50, 16);
+
+        btnGuardarPP.setText("Guardar");
+        jPanelPagoP.add(btnGuardarPP);
+        btnGuardarPP.setBounds(230, 280, 73, 28);
+
+        btnModificarPP.setText("Modificar");
+        jPanelPagoP.add(btnModificarPP);
+        btnModificarPP.setBounds(320, 280, 90, 28);
+
+        jLabel21.setText("Estado (Activo o Inactivo)");
+        jPanelPagoP.add(jLabel21);
+        jLabel21.setBounds(390, 210, 150, 16);
+        jPanelPagoP.add(txtCantidadPP);
+        txtCantidadPP.setBounds(280, 210, 80, 28);
+
+        btnBuscarPP.setText("Buscar");
+        jPanelPagoP.add(btnBuscarPP);
+        btnBuscarPP.setBounds(420, 280, 67, 28);
+
+        btnEliminarPP.setText("Eliminar");
+        jPanelPagoP.add(btnEliminarPP);
+        btnEliminarPP.setBounds(510, 280, 90, 28);
 
         jPanelPrincipal.add(jPanelPagoP, "PagoP");
 
@@ -269,7 +416,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("PagoRelizado");
         jPanelPagoR.add(jLabel10);
-        jLabel10.setBounds(120, 110, 150, 15);
+        jLabel10.setBounds(120, 110, 150, 16);
 
         jPanelPrincipal.add(jPanelPagoR, "PagoR");
 
@@ -278,6 +425,10 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listRolUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listRolUsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listRolUsActionPerformed
 
 
     /**
@@ -301,9 +452,28 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBuscarPP;
+    public javax.swing.JButton btnBuscarUs;
+    public javax.swing.JButton btnEliminarPP;
+    public javax.swing.JButton btnEliminarUs;
+    public javax.swing.JButton btnGuardarPP;
+    public javax.swing.JButton btnGuardarUs;
+    public javax.swing.JButton btnModificarPP;
+    public javax.swing.JButton btnModificarUs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -322,7 +492,18 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTCoporal;
     private javax.swing.JPanel jPanelTFacial;
     public javax.swing.JPanel jPanelUsuario;
+    public javax.swing.JComboBox<String> listRolUs;
     private javax.swing.JMenuBar mbMenuBar;
+    public javax.swing.JTextField txtCantidadPP;
+    public javax.swing.JPasswordField txtConfNuevaPassUs;
+    public javax.swing.JTextField txtCorreoUs;
+    public javax.swing.JTextField txtEstadoPP;
+    public javax.swing.JTextField txtEstadoUs;
+    public javax.swing.JTextField txtFechaPP;
+    public javax.swing.JTextField txtIdPP;
+    public javax.swing.JTextField txtIdUs;
+    public javax.swing.JTextField txtNombreUs;
+    public javax.swing.JPasswordField txtNuevaPassUs;
     // End of variables declaration//GEN-END:variables
  // Declaración de los menús
     public javax.swing.JMenu jMenuPago;
