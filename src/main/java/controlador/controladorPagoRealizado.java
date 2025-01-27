@@ -44,7 +44,7 @@ public class controladorPagoRealizado implements ActionListener {
         frmContenedorPrincipal.txtMinutoPR.setText(null);
         frmContenedorPrincipal.txtMetodoPR.setText(null);
         Calendar today = Calendar.getInstance();
-        frmContenedorPrincipal.dateFechaPP.setDate(today.getTime());
+        frmContenedorPrincipal.dateFechaPR.setDate(today.getTime());
     }
 
     @Override

@@ -9,7 +9,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.DbMedicoActivo;
+import modelo.DbPagoPendiente;
+import modelo.DbPagoRealizado;
+import modelo.DbUsuario;
+import modelo.MedicoActivo;
+import modelo.PagoPendiente;
+import modelo.PagoRealizado;
 import vista.frmContenedorPrincipal;
+import modelo.Usuario;
 
 
 /**
@@ -44,8 +52,14 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "Paciente");
         } 
         if (e.getSource() == frmConP.jMenuUsuarios) {
+            Usuario us = new Usuario();
+            DbUsuario dbUsuario = new DbUsuario();
+            controladorUsuario ctrUs = new controladorUsuario(us, frmConP, dbUsuario);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
             cardLayout.show(frmConP.jPanelPrincipal, "Usuario");
+            frmConP.txtIdUs.setVisible(false);
+            
+            ctrUs.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosFacial) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
@@ -56,8 +70,12 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "TCorporal");
         } 
         if (e.getSource() == frmConP.jMenuItemMedicoActivos) {
+            MedicoActivo ma = new MedicoActivo();
+            DbMedicoActivo dbMA = new DbMedicoActivo();
+            controladorMedicoActivo ctrMa = new controladorMedicoActivo(frmConP, ma, dbMA);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "MActivo");
+            cardLayout.show(frmConP.jPanelPrincipal, "MaActivo");
+            ctrMa.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemMedicoInactivos) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
@@ -72,12 +90,20 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "CMSur");
         } 
         if (e.getSource() == frmConP.jMenuItemPagoPendiente) {
+            PagoPendiente pp = new PagoPendiente();
+            DbPagoPendiente dbPP = new DbPagoPendiente();
+            controladorPagoPendiente ctrPp = new controladorPagoPendiente(pp, frmConP, dbPP);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "PagoP");
+            cardLayout.show(frmConP.jPanelPrincipal, "PagoP");            
+            ctrPp.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemPagoRealizado) {
+            PagoRealizado pr = new PagoRealizado();
+            DbPagoRealizado dbPR = new DbPagoRealizado();
+            controladorPagoRealizado ctrPr = new controladorPagoRealizado(pr, frmConP, dbPR);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
             cardLayout.show(frmConP.jPanelPrincipal, "PagoR");
+            ctrPr.iniciar();
         } 
         
     }

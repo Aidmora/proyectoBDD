@@ -41,10 +41,13 @@ public class controladorLogin implements ActionListener {
         if(e.getSource() == frmLogin.btnIngresar){
             us.setCorreoElectronico(frmLogin.txtEmail.getText().trim());
             us.setContrasenia(frmLogin.txtPassword.getText());
-            if(dbUsuario.buscar(us)){
+            if(dbUsuario.buscarIngreso(us)){
                 frmLogin.dispose();
                 frmContPrincipal.setLocationRelativeTo(null);
                 frmContPrincipal.setVisible(true);
+            } else{
+                frmLogin.txtEmail.setText(null);
+                frmLogin.txtPassword.setText(null);
             }
         }
     }
