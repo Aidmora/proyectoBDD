@@ -9,6 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.CitaMedicaSur;
+import modelo.DbCitaMedicaSur;
+import modelo.DbMedicoInactivo;
+import modelo.DbTratamientoCorporal;
+import modelo.MedicoInactivo;
+import modelo.TratamientoCorporal;
 import vista.frmContenedorPrincipal;
 
 
@@ -52,24 +58,30 @@ public class controladorMenuBar  implements ActionListener{
             cardLayout.show(frmConP.jPanelPrincipal, "TFacial");
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosCorporal) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "TCorporal");
+            TratamientoCorporal tratamientoCorporal =  new TratamientoCorporal();
+            DbTratamientoCorporal dbCorporal = new DbTratamientoCorporal();
+            controladorTratamientoCorporal crtC = new controladorTratamientoCorporal(tratamientoCorporal,dbCorporal,frmConP);
+            crtC.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemMedicoActivos) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
             cardLayout.show(frmConP.jPanelPrincipal, "MActivo");
         } 
         if (e.getSource() == frmConP.jMenuItemMedicoInactivos) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "MInactivo");
+            MedicoInactivo mi = new MedicoInactivo();
+            DbMedicoInactivo dbMI = new DbMedicoInactivo();
+            controladorMedicoInactivo ctrMI = new controladorMedicoInactivo(mi,dbMI, frmConP);
+            ctrMI.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaNorte) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
             cardLayout.show(frmConP.jPanelPrincipal, "CMNorte");
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaSur) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "CMSur");
+            CitaMedicaSur citaMedicaSur= new CitaMedicaSur();
+            DbCitaMedicaSur dbCitaMedicaSur= new DbCitaMedicaSur();
+            controladorCitaMedicaSur conCitaMedicaSur= new controladorCitaMedicaSur(citaMedicaSur, dbCitaMedicaSur, frmConP);
+            conCitaMedicaSur.iniciar(); 
         } 
         if (e.getSource() == frmConP.jMenuItemPagoPendiente) {
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();

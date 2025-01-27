@@ -14,8 +14,8 @@ import java.sql.SQLException;
  */
 public class Conexion {
     private final String url="jdbc:oracle:thin:@localhost:1521:orcl";
-    private final String nombreUsuario="djaramillo";
-    private final String contrasenia="djaramillo";
+    private final String nombreUsuario="nleiva";
+    private final String contrasenia="nleiva";
     private Connection con=null;
     public Connection getConexion(){
         try {
