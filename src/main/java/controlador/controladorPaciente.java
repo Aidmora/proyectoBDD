@@ -44,17 +44,17 @@ public class controladorPaciente implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //Guardar
         if(e.getSource()== frmContenedorPrincipal.btnGuardarPa){
-           pa.setNumeroCedula(frmContenedorPrincipal.txtCedula.getText().trim());
+           pa.setNumeroCedula(frmContenedorPrincipal.txtCedulaPA.getText().trim());
             java.util.Date fecha = frmContenedorPrincipal.dateChooserCMN.getDate();
             if (fecha == null) {
                 JOptionPane.showMessageDialog(null, "Seleccione la fecha de la cita");
                 return; // o no guardes
             }
            pa.setFechaNacimiento(new Date(fecha.getTime()));
-           pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTel.getText().trim());
-           pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElec.getText().trim());
-           pa.setNombre(frmContenedorPrincipal.txtNombre.getText().trim());
-           pa.setUbicacion(frmContenedorPrincipal.txtUbicacion.getText().trim());
+           pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTelPA.getText().trim());
+           pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElecPA.getText().trim());
+           pa.setNombre(frmContenedorPrincipal.txtNombrePA.getText().trim());
+           pa.setUbicacion(frmContenedorPrincipal.txtUbicacionPA.getText().trim());
             if (DbPaciente.guardar(pa)) {
                 JOptionPane.showMessageDialog(null, "Paciente Guardado");
                 limpiar();
@@ -71,11 +71,11 @@ public class controladorPaciente implements ActionListener{
                 return; // o no guardes
             }
            pa.setFechaNacimiento(new Date(fecha.getTime()));
-           pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTel.getText().trim());
-           pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElec.getText().trim());
-           pa.setNombre(frmContenedorPrincipal.txtNombre.getText().trim());
-           pa.setUbicacion(frmContenedorPrincipal.txtUbicacion.getText().trim());
-           pa.setNumeroCedula(frmContenedorPrincipal.txtCedula.getText().trim());
+           pa.setNumeroTelefono(frmContenedorPrincipal.txtNumTelPA.getText().trim());
+           pa.setCorreoElectronico(frmContenedorPrincipal.txtCorreoElecPA.getText().trim());
+           pa.setNombre(frmContenedorPrincipal.txtNombrePA.getText().trim());
+           pa.setUbicacion(frmContenedorPrincipal.txtUbicacionPA.getText().trim());
+           pa.setNumeroCedula(frmContenedorPrincipal.txtCedulaPA.getText().trim());
             if (DbPaciente.modificar(pa)) {
                 JOptionPane.showMessageDialog(null, "Paciente Modificado");
                 limpiar();
@@ -86,7 +86,7 @@ public class controladorPaciente implements ActionListener{
         }
         //Eliminar
         if(e.getSource()== frmContenedorPrincipal.btnEliminarPa){
-           pa.setNumeroCedula(frmContenedorPrincipal.txtCedula.getText().trim());
+           pa.setNumeroCedula(frmContenedorPrincipal.txtCedulaPA.getText().trim());
             if (DbPaciente.eliminar(pa)) {
                 JOptionPane.showMessageDialog(null, "Paciente Eliminado");
                 limpiar();
@@ -97,14 +97,14 @@ public class controladorPaciente implements ActionListener{
         }
         //Buscar
         if(e.getSource()== frmContenedorPrincipal.btnBuscarPa){
-           pa.setNumeroCedula(frmContenedorPrincipal.txtCedula.getText().trim());
+           pa.setNumeroCedula(frmContenedorPrincipal.txtCedulaPA.getText().trim());
             if (DbPaciente.buscar(pa)) {
-                frmContenedorPrincipal.txtCedula.setText(pa.getNumeroCedula());
-                frmContenedorPrincipal.dateFechaNac.setDate(pa.getFechaNacimiento());
-                frmContenedorPrincipal.txtNumTel.setText(pa.getNumeroTelefono());
-                frmContenedorPrincipal.txtCorreoElec.setText(pa.getCorreoElectronico());
-                frmContenedorPrincipal.txtNombre.setText(pa.getNombre());
-                frmContenedorPrincipal.txtUbicacion.setText(pa.getUbicacion());
+                frmContenedorPrincipal.txtCedulaPA.setText(pa.getNumeroCedula());
+                frmContenedorPrincipal.dateFechaNacPA.setDate(pa.getFechaNacimiento());
+                frmContenedorPrincipal.txtNumTelPA.setText(pa.getNumeroTelefono());
+                frmContenedorPrincipal.txtCorreoElecPA.setText(pa.getCorreoElectronico());
+                frmContenedorPrincipal.txtNombrePA.setText(pa.getNombre());
+                frmContenedorPrincipal.txtUbicacionPA.setText(pa.getUbicacion());
             }else{
                 JOptionPane.showMessageDialog(null, "No se encontró al Paciente ");
                 limpiar();
@@ -115,12 +115,12 @@ public class controladorPaciente implements ActionListener{
         }
     }
     public void limpiar(){
-        frmContenedorPrincipal.txtCedula.setText(null);
-        frmContenedorPrincipal.dateFechaNac.setDate(null);
-        frmContenedorPrincipal.txtNumTel.setText(null);
-        frmContenedorPrincipal.txtCorreoElec.setText(null);
-        frmContenedorPrincipal.txtNombre.setText(null);
-        frmContenedorPrincipal.txtUbicacion.setText(null);
+        frmContenedorPrincipal.txtCedulaPA.setText(null);
+        frmContenedorPrincipal.dateFechaNacPA.setDate(null);
+        frmContenedorPrincipal.txtNumTelPA.setText(null);
+        frmContenedorPrincipal.txtCorreoElecPA.setText(null);
+        frmContenedorPrincipal.txtNombrePA.setText(null);
+        frmContenedorPrincipal.txtUbicacionPA.setText(null);
     }
     
     

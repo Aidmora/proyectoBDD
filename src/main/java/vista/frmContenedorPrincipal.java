@@ -153,23 +153,23 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jPanelPaciente = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnModificarPa = new javax.swing.JButton();
-        txtCedula = new javax.swing.JTextField();
-        txtNumTel = new javax.swing.JTextField();
+        txtCedulaPA = new javax.swing.JTextField();
+        txtNumTelPA = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        dateFechaNac = new com.toedter.calendar.JDateChooser();
+        dateFechaNacPA = new com.toedter.calendar.JDateChooser();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtNombrePA = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        txtUbicacion = new javax.swing.JTextField();
+        txtUbicacionPA = new javax.swing.JTextField();
         btnGuardarPa = new javax.swing.JButton();
         btnEliminarPa = new javax.swing.JButton();
         btnLimpiarPa = new javax.swing.JButton();
         btnBuscarPa = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        txtCorreoElec = new javax.swing.JTextField();
+        txtCorreoElecPA = new javax.swing.JTextField();
         jPanelTFacial = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -267,18 +267,18 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         btnModificarPa.setText("Modificar");
         jPanelPaciente.add(btnModificarPa);
         btnModificarPa.setBounds(370, 310, 130, 23);
-        jPanelPaciente.add(txtCedula);
-        txtCedula.setBounds(170, 130, 130, 22);
-        jPanelPaciente.add(txtNumTel);
-        txtNumTel.setBounds(170, 230, 130, 22);
+        jPanelPaciente.add(txtCedulaPA);
+        txtCedulaPA.setBounds(170, 130, 130, 22);
+        jPanelPaciente.add(txtNumTelPA);
+        txtNumTelPA.setBounds(170, 230, 130, 22);
 
         jLabel11.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("PACIENTE");
         jPanelPaciente.add(jLabel11);
         jLabel11.setBounds(260, 70, 150, 15);
-        jPanelPaciente.add(dateFechaNac);
-        dateFechaNac.setBounds(170, 180, 130, 22);
+        jPanelPaciente.add(dateFechaNacPA);
+        dateFechaNacPA.setBounds(170, 180, 130, 22);
 
         jLabel12.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -303,16 +303,16 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel15.setText("Cédula");
         jPanelPaciente.add(jLabel15);
         jLabel15.setBounds(170, 110, 45, 15);
-        jPanelPaciente.add(txtNombre);
-        txtNombre.setBounds(370, 130, 130, 22);
+        jPanelPaciente.add(txtNombrePA);
+        txtNombrePA.setBounds(370, 130, 130, 22);
 
         jLabel16.setFont(new java.awt.Font("Rubik Medium", 0, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Nombre");
         jPanelPaciente.add(jLabel16);
         jLabel16.setBounds(370, 110, 45, 15);
-        jPanelPaciente.add(txtUbicacion);
-        txtUbicacion.setBounds(370, 180, 130, 22);
+        jPanelPaciente.add(txtUbicacionPA);
+        txtUbicacionPA.setBounds(370, 180, 130, 22);
 
         btnGuardarPa.setBackground(new java.awt.Color(204, 204, 204));
         btnGuardarPa.setText("Guardar");
@@ -339,8 +339,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel17.setText("Ubicación");
         jPanelPaciente.add(jLabel17);
         jLabel17.setBounds(370, 160, 110, 15);
-        jPanelPaciente.add(txtCorreoElec);
-        txtCorreoElec.setBounds(370, 230, 130, 22);
+        jPanelPaciente.add(txtCorreoElecPA);
+        txtCorreoElecPA.setBounds(370, 230, 130, 22);
 
         jPanelPrincipal.add(jPanelPaciente, "Paciente");
 
@@ -699,8 +699,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnModificarPa1;
     public javax.swing.JButton btnModificarTF;
     public com.toedter.calendar.JDateChooser dateChooserCMN;
-    public com.toedter.calendar.JDateChooser dateFechaNac;
     public com.toedter.calendar.JDateChooser dateFechaNac1;
+    public com.toedter.calendar.JDateChooser dateFechaNacPA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -752,22 +752,22 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JSpinner spinHoraN;
     public javax.swing.JSpinner spinMinN;
     public javax.swing.JTextArea txtAreaComenCMN;
-    public javax.swing.JTextField txtCedula;
     public javax.swing.JTextField txtCedula1;
+    public javax.swing.JTextField txtCedulaPA;
     public javax.swing.JTextField txtCodigoCMN;
     public javax.swing.JTextField txtCodigoTF;
-    public javax.swing.JTextField txtCorreoElec;
     public javax.swing.JTextField txtCorreoElec1;
-    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtCorreoElecPA;
     public javax.swing.JTextField txtNombre1;
+    public javax.swing.JTextField txtNombrePA;
     public javax.swing.JTextField txtNombreTF;
-    public javax.swing.JTextField txtNumTel;
     public javax.swing.JTextField txtNumTel1;
+    public javax.swing.JTextField txtNumTelPA;
     public javax.swing.JFormattedTextField txtPrecioTF;
     public javax.swing.JTextField txtSucursalCMN;
     public javax.swing.JTextField txtTipoTF;
-    public javax.swing.JTextField txtUbicacion;
     public javax.swing.JTextField txtUbicacion1;
+    public javax.swing.JTextField txtUbicacionPA;
     // End of variables declaration//GEN-END:variables
  // Declaración de los menús
     public javax.swing.JMenu jMenuPago;
