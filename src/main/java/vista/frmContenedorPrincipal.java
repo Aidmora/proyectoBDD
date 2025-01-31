@@ -38,6 +38,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuPago = new javax.swing.JMenu();
         jMenuItemPagoPendiente = new javax.swing.JMenuItem();
         jMenuItemPagoRealizado = new javax.swing.JMenuItem();
+        jMenuItemPagoPendienteVM = new javax.swing.JMenuItem();
+        jMenuItemPagoRealizadoVM = new javax.swing.JMenuItem();
         
         // Menú principal de "Medicos"
         jMenuMedicos = new javax.swing.JMenu();
@@ -73,6 +75,11 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuItemPagoRealizado.setText("Realizado");
         jMenuPago.add(jMenuItemPagoPendiente);
         jMenuPago.add(jMenuItemPagoRealizado);
+        
+        jMenuItemPagoPendienteVM.setText("PendienteVM");
+        jMenuItemPagoRealizadoVM.setText("RealizadoVM");
+        jMenuPago.add(jMenuItemPagoPendienteVM);
+        jMenuPago.add(jMenuItemPagoRealizadoVM);
         
         // Menú Medicos
         jMenuMedicos.setText("Medicos");
@@ -394,6 +401,18 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel92 = new javax.swing.JLabel();
         txtNombreUsVM = new javax.swing.JTextField();
         btnBuscarUsVM = new javax.swing.JButton();
+        jPanelPagoPVM = new javax.swing.JPanel();
+        jLabel85 = new javax.swing.JLabel();
+        txtIdPPVM = new javax.swing.JTextField();
+        txtEstadoPPVM = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        txtCantidadPPVM = new javax.swing.JTextField();
+        btnLimpiarPPVM = new javax.swing.JButton();
+        dateFechaPPVM = new com.toedter.calendar.JDateChooser();
+        btnBuscarPPVM = new javax.swing.JButton();
         mbMenuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1507,6 +1526,52 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal.add(jPanelUsuarioVM, "UsuarioVM");
 
+        jPanelPagoPVM.setLayout(null);
+
+        jLabel85.setFont(new java.awt.Font("Rondalo", 1, 18)); // NOI18N
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel85.setText("Pago Pendiente");
+        jPanelPagoPVM.add(jLabel85);
+        jLabel85.setBounds(320, 80, 180, 40);
+
+        txtIdPPVM.setText(" ");
+        jPanelPagoPVM.add(txtIdPPVM);
+        txtIdPPVM.setBounds(240, 140, 80, 26);
+
+        txtEstadoPPVM.setText(" ");
+        jPanelPagoPVM.add(txtEstadoPPVM);
+        txtEstadoPPVM.setBounds(490, 180, 150, 26);
+
+        jLabel86.setText("Id");
+        jPanelPagoPVM.add(jLabel86);
+        jLabel86.setBounds(220, 150, 10, 16);
+
+        jLabel91.setText("Fecha Límite ");
+        jPanelPagoPVM.add(jLabel91);
+        jLabel91.setBounds(374, 150, 110, 16);
+
+        jLabel93.setText("Cantidad");
+        jPanelPagoPVM.add(jLabel93);
+        jLabel93.setBounds(180, 190, 48, 16);
+
+        jLabel94.setText("Estado (Activo o Inactivo)");
+        jPanelPagoPVM.add(jLabel94);
+        jLabel94.setBounds(320, 190, 180, 16);
+        jPanelPagoPVM.add(txtCantidadPPVM);
+        txtCantidadPPVM.setBounds(240, 180, 80, 26);
+
+        btnLimpiarPPVM.setText("Limpiar");
+        jPanelPagoPVM.add(btnLimpiarPPVM);
+        btnLimpiarPPVM.setBounds(370, 310, 90, 27);
+        jPanelPagoPVM.add(dateFechaPPVM);
+        dateFechaPPVM.setBounds(490, 140, 160, 26);
+
+        btnBuscarPPVM.setText("Buscar");
+        jPanelPagoPVM.add(btnBuscarPPVM);
+        btnBuscarPPVM.setBounds(370, 260, 90, 27);
+
+        jPanelPrincipal.add(jPanelPagoPVM, "PagoPVM");
+
         getContentPane().add(jPanelPrincipal, java.awt.BorderLayout.CENTER);
         setJMenuBar(mbMenuBar);
 
@@ -1624,6 +1689,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnBuscarMA;
     public javax.swing.JButton btnBuscarMI;
     public javax.swing.JButton btnBuscarPP;
+    public javax.swing.JButton btnBuscarPPVM;
     public javax.swing.JButton btnBuscarPR;
     public javax.swing.JButton btnBuscarPa;
     public javax.swing.JButton btnBuscarPa1;
@@ -1657,6 +1723,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnLimpiarCMN;
     public javax.swing.JButton btnLimpiarCMS;
     public javax.swing.JButton btnLimpiarMI;
+    public javax.swing.JButton btnLimpiarPPVM;
     public javax.swing.JButton btnLimpiarPa;
     public javax.swing.JButton btnLimpiarPa1;
     public javax.swing.JButton btnLimpiarPaVM;
@@ -1682,6 +1749,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public com.toedter.calendar.JDateChooser dateFechaNacPA;
     public com.toedter.calendar.JDateChooser dateFechaNacPAVM;
     public com.toedter.calendar.JDateChooser dateFechaPP;
+    public com.toedter.calendar.JDateChooser dateFechaPPVM;
     public com.toedter.calendar.JDateChooser dateFechaPR;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1766,12 +1834,17 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
     public javax.swing.JPanel jPanelCMNorte;
     public javax.swing.JPanel jPanelCMSur;
     private javax.swing.JPanel jPanelMedicoActivo;
@@ -1780,6 +1853,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JPanel jPanelPaciente1;
     public javax.swing.JPanel jPanelPacienteVM;
     private javax.swing.JPanel jPanelPagoP;
+    private javax.swing.JPanel jPanelPagoPVM;
     private javax.swing.JPanel jPanelPagoR;
     public javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelTCorporal;
@@ -1797,6 +1871,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JSpinner spinMinSur;
     public javax.swing.JTextArea txtAreaComenCMN;
     public javax.swing.JTextField txtCantidadPP;
+    public javax.swing.JTextField txtCantidadPPVM;
     public javax.swing.JTextField txtCantidadPR;
     public javax.swing.JTextField txtCedula1;
     public javax.swing.JTextField txtCedulaMA;
@@ -1820,10 +1895,12 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField txtEstadoMA;
     public javax.swing.JTextField txtEstadoMI;
     public javax.swing.JTextField txtEstadoPP;
+    public javax.swing.JTextField txtEstadoPPVM;
     public javax.swing.JTextField txtEstadoUs;
     public javax.swing.JTextField txtEstadoUsVM;
     public javax.swing.JTextField txtHoraPR;
     public javax.swing.JTextField txtIdPP;
+    public javax.swing.JTextField txtIdPPVM;
     public javax.swing.JTextField txtIdPR;
     public javax.swing.JTextField txtIdUs1;
     public javax.swing.JTextField txtIdUsVM;
@@ -1858,7 +1935,9 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
  // Declaración de los menús
     public javax.swing.JMenu jMenuPago;
     public javax.swing.JMenuItem jMenuItemPagoPendiente;
+    public javax.swing.JMenuItem jMenuItemPagoPendienteVM;
     public javax.swing.JMenuItem jMenuItemPagoRealizado;
+    public javax.swing.JMenuItem jMenuItemPagoRealizadoVM;
 
     public javax.swing.JMenu jMenuMedicos;
     public javax.swing.JMenuItem jMenuItemMedicoActivos;

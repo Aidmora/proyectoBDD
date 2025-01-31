@@ -18,6 +18,7 @@ import modelo.DbMedicoInactivo;
 import modelo.DbPaciente;
 import modelo.DbPacienteVM;
 import modelo.DbPagoPendiente;
+import modelo.DbPagoPendienteVM;
 import modelo.DbPagoRealizado;
 import modelo.DbTratamientoCorporal;
 import modelo.DbTratamientoFacial;
@@ -28,6 +29,7 @@ import modelo.MedicoInactivo;
 import modelo.Paciente;
 import modelo.PacienteVM;
 import modelo.PagoPendiente;
+import modelo.PagoPendienteVM;
 import modelo.PagoRealizado;
 import modelo.TratamientoCorporal;
 import modelo.TratamientoFacial;
@@ -57,6 +59,7 @@ public class controladorMenuBar  implements ActionListener{
         this.frmConP.jMenuItemCitaMedicaNorte.addActionListener(this);
         this.frmConP.jMenuItemCitaMedicaSur.addActionListener(this);
         this.frmConP.jMenuItemPagoPendiente.addActionListener(this);
+        this.frmConP.jMenuItemPagoPendienteVM.addActionListener(this);
         this.frmConP.jMenuItemPagoRealizado.addActionListener(this);
     }
     public void iniciar() {
@@ -137,9 +140,15 @@ public class controladorMenuBar  implements ActionListener{
             PagoPendiente pp = new PagoPendiente();
             DbPagoPendiente dbPP = new DbPagoPendiente();
             controladorPagoPendiente ctrPp = new controladorPagoPendiente(pp, frmConP, dbPP);
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "PagoP");            
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();          
             ctrPp.iniciar();
+        } 
+        if (e.getSource() == frmConP.jMenuItemPagoPendienteVM) {
+            PagoPendienteVM pp = new PagoPendienteVM();
+            DbPagoPendienteVM dbPP = new DbPagoPendienteVM();
+            controladorPagoPendienteVM ctrPpVM= new controladorPagoPendienteVM(pp, frmConP, dbPP);
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();         
+            ctrPpVM.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemPagoRealizado) {
             PagoRealizado pr = new PagoRealizado();
