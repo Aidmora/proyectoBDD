@@ -20,6 +20,7 @@ import modelo.DbPacienteVM;
 import modelo.DbPagoPendiente;
 import modelo.DbPagoPendienteVM;
 import modelo.DbPagoRealizado;
+import modelo.DbPagoRealizadoVM;
 import modelo.DbTratamientoCorporal;
 import modelo.DbTratamientoFacial;
 import modelo.DbUsuario;
@@ -31,6 +32,7 @@ import modelo.PacienteVM;
 import modelo.PagoPendiente;
 import modelo.PagoPendienteVM;
 import modelo.PagoRealizado;
+import modelo.PagoRealizadoVM;
 import modelo.TratamientoCorporal;
 import modelo.TratamientoFacial;
 import modelo.Usuario;
@@ -61,6 +63,7 @@ public class controladorMenuBar  implements ActionListener{
         this.frmConP.jMenuItemPagoPendiente.addActionListener(this);
         this.frmConP.jMenuItemPagoPendienteVM.addActionListener(this);
         this.frmConP.jMenuItemPagoRealizado.addActionListener(this);
+        this.frmConP.jMenuItemPagoRealizadoVM.addActionListener(this);
     }
     public void iniciar() {
         frmConP.setTitle("Centro Médico");
@@ -155,11 +158,15 @@ public class controladorMenuBar  implements ActionListener{
             DbPagoRealizado dbPR = new DbPagoRealizado();
             controladorPagoRealizado ctrPr = new controladorPagoRealizado(pr, frmConP, dbPR);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "PagoR");
-            ctrPr.iniciar();
-
-        
-    }
+            ctrPr.iniciar();      
+        }
+        if (e.getSource() == frmConP.jMenuItemPagoRealizadoVM) {
+            PagoRealizadoVM pr = new PagoRealizadoVM();
+            DbPagoRealizadoVM dbPR = new DbPagoRealizadoVM();
+            controladorPagoRealizadoVM ctrPrVM = new controladorPagoRealizadoVM(pr, frmConP, dbPR);
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
+            ctrPrVM.iniciar();      
+        }
     
     }
 }

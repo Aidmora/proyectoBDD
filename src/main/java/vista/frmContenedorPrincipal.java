@@ -413,6 +413,23 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         btnLimpiarPPVM = new javax.swing.JButton();
         dateFechaPPVM = new com.toedter.calendar.JDateChooser();
         btnBuscarPPVM = new javax.swing.JButton();
+        jPanelPagoRVM = new javax.swing.JPanel();
+        jLabel95 = new javax.swing.JLabel();
+        txtCantidadPRVM = new javax.swing.JTextField();
+        txtMetodoPRVM = new javax.swing.JTextField();
+        dateFechaPRVM = new com.toedter.calendar.JDateChooser();
+        txtHoraPRVM = new javax.swing.JTextField();
+        txtMinutoPRVM = new javax.swing.JTextField();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        btnBuscarPRVM = new javax.swing.JButton();
+        txtIdPRVM = new javax.swing.JTextField();
+        jLabel103 = new javax.swing.JLabel();
         mbMenuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1572,6 +1589,92 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal.add(jPanelPagoPVM, "PagoPVM");
 
+        jPanelPagoRVM.setLayout(null);
+
+        jLabel95.setFont(new java.awt.Font("Rondalo", 1, 24)); // NOI18N
+        jLabel95.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel95.setText("Pago Realizado");
+        jPanelPagoRVM.add(jLabel95);
+        jLabel95.setBounds(280, 60, 300, 50);
+
+        txtCantidadPRVM.setText(" ");
+        txtCantidadPRVM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadPRVMActionPerformed(evt);
+            }
+        });
+        jPanelPagoRVM.add(txtCantidadPRVM);
+        txtCantidadPRVM.setBounds(240, 190, 100, 26);
+
+        txtMetodoPRVM.setText(" ");
+        txtMetodoPRVM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMetodoPRVMActionPerformed(evt);
+            }
+        });
+        jPanelPagoRVM.add(txtMetodoPRVM);
+        txtMetodoPRVM.setBounds(240, 240, 100, 26);
+        jPanelPagoRVM.add(dateFechaPRVM);
+        dateFechaPRVM.setBounds(540, 190, 180, 26);
+
+        txtHoraPRVM.setText(" ");
+        jPanelPagoRVM.add(txtHoraPRVM);
+        txtHoraPRVM.setBounds(570, 240, 70, 26);
+
+        txtMinutoPRVM.setText(" ");
+        jPanelPagoRVM.add(txtMinutoPRVM);
+        txtMinutoPRVM.setBounds(650, 240, 70, 26);
+
+        jLabel96.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel96.setText(":");
+        jPanelPagoRVM.add(jLabel96);
+        jLabel96.setBounds(640, 240, 10, 16);
+
+        jLabel97.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel97.setText("ID");
+        jPanelPagoRVM.add(jLabel97);
+        jLabel97.setBounds(220, 160, 80, 16);
+
+        jLabel98.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel98.setText("Método de pago");
+        jPanelPagoRVM.add(jLabel98);
+        jLabel98.setBounds(120, 240, 130, 16);
+
+        jLabel99.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel99.setText("Fecha cancelación");
+        jPanelPagoRVM.add(jLabel99);
+        jLabel99.setBounds(400, 200, 170, 16);
+
+        jLabel100.setFont(new java.awt.Font("sansserif", 2, 12)); // NOI18N
+        jLabel100.setText("00-60");
+        jPanelPagoRVM.add(jLabel100);
+        jLabel100.setBounds(670, 270, 40, 16);
+
+        jLabel101.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel101.setText("Hora de cancelación");
+        jPanelPagoRVM.add(jLabel101);
+        jLabel101.setBounds(400, 240, 170, 16);
+
+        jLabel102.setFont(new java.awt.Font("sansserif", 2, 12)); // NOI18N
+        jLabel102.setText("01-24");
+        jPanelPagoRVM.add(jLabel102);
+        jLabel102.setBounds(580, 270, 40, 16);
+
+        btnBuscarPRVM.setText("Buscar");
+        jPanelPagoRVM.add(btnBuscarPRVM);
+        btnBuscarPRVM.setBounds(400, 340, 76, 27);
+
+        txtIdPRVM.setText(" ");
+        jPanelPagoRVM.add(txtIdPRVM);
+        txtIdPRVM.setBounds(240, 150, 100, 26);
+
+        jLabel103.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel103.setText("Cantidad");
+        jPanelPagoRVM.add(jLabel103);
+        jLabel103.setBounds(170, 200, 80, 16);
+
+        jPanelPrincipal.add(jPanelPagoRVM, "PagoRVM");
+
         getContentPane().add(jPanelPrincipal, java.awt.BorderLayout.CENTER);
         setJMenuBar(mbMenuBar);
 
@@ -1658,6 +1761,14 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_listRolUsVMActionPerformed
 
+    private void txtCantidadPRVMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadPRVMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadPRVMActionPerformed
+
+    private void txtMetodoPRVMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMetodoPRVMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMetodoPRVMActionPerformed
+
     private void txtEstadoMAActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
     }//
@@ -1691,6 +1802,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnBuscarPP;
     public javax.swing.JButton btnBuscarPPVM;
     public javax.swing.JButton btnBuscarPR;
+    public javax.swing.JButton btnBuscarPRVM;
     public javax.swing.JButton btnBuscarPa;
     public javax.swing.JButton btnBuscarPa1;
     public javax.swing.JButton btnBuscarPaVM;
@@ -1751,8 +1863,13 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public com.toedter.calendar.JDateChooser dateFechaPP;
     public com.toedter.calendar.JDateChooser dateFechaPPVM;
     public com.toedter.calendar.JDateChooser dateFechaPR;
+    public com.toedter.calendar.JDateChooser dateFechaPRVM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1845,6 +1962,11 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     public javax.swing.JPanel jPanelCMNorte;
     public javax.swing.JPanel jPanelCMSur;
     private javax.swing.JPanel jPanelMedicoActivo;
@@ -1855,6 +1977,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelPagoP;
     private javax.swing.JPanel jPanelPagoPVM;
     private javax.swing.JPanel jPanelPagoR;
+    private javax.swing.JPanel jPanelPagoRVM;
     public javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelTCorporal;
     public javax.swing.JPanel jPanelTFacial;
@@ -1873,6 +1996,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField txtCantidadPP;
     public javax.swing.JTextField txtCantidadPPVM;
     public javax.swing.JTextField txtCantidadPR;
+    public javax.swing.JTextField txtCantidadPRVM;
     public javax.swing.JTextField txtCedula1;
     public javax.swing.JTextField txtCedulaMA;
     public javax.swing.JTextField txtCedulaPA;
@@ -1899,13 +2023,17 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField txtEstadoUs;
     public javax.swing.JTextField txtEstadoUsVM;
     public javax.swing.JTextField txtHoraPR;
+    public javax.swing.JTextField txtHoraPRVM;
     public javax.swing.JTextField txtIdPP;
     public javax.swing.JTextField txtIdPPVM;
     public javax.swing.JTextField txtIdPR;
+    public javax.swing.JTextField txtIdPRVM;
     public javax.swing.JTextField txtIdUs1;
     public javax.swing.JTextField txtIdUsVM;
     public javax.swing.JTextField txtMetodoPR;
+    public javax.swing.JTextField txtMetodoPRVM;
     public javax.swing.JTextField txtMinutoPR;
+    public javax.swing.JTextField txtMinutoPRVM;
     public javax.swing.JTextField txtNombre1;
     public javax.swing.JTextField txtNombreMA;
     public javax.swing.JTextField txtNombreMI;
