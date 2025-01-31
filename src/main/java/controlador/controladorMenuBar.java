@@ -22,6 +22,7 @@ import modelo.DbPagoRealizado;
 import modelo.DbTratamientoCorporal;
 import modelo.DbTratamientoFacial;
 import modelo.DbUsuario;
+import modelo.DbUsuarioVM;
 import modelo.MedicoActivo;
 import modelo.MedicoInactivo;
 import modelo.Paciente;
@@ -31,6 +32,7 @@ import modelo.PagoRealizado;
 import modelo.TratamientoCorporal;
 import modelo.TratamientoFacial;
 import modelo.Usuario;
+import modelo.UsuarioVM;
 import vista.frmContenedorPrincipal;
 
 
@@ -45,7 +47,8 @@ public class controladorMenuBar  implements ActionListener{
     public controladorMenuBar(frmContenedorPrincipal frmContenedorPrincipal){
         this.frmConP=frmContenedorPrincipal;
         this.frmConP.jMenuItemPaciente.addActionListener(this);
-        this.frmConP.jMenuUsuarios.addActionListener(this);
+        this.frmConP.jMenuItemUsuarioM.addActionListener(this);
+        this.frmConP.jMenuItemUsuario.addActionListener(this);
         this.frmConP.jMenuItemPacienteM.addActionListener(this);
         this.frmConP.jMenuItemTratamientosCorporal.addActionListener(this);
         this.frmConP.jMenuItemTratamientosFacial.addActionListener(this);
@@ -73,17 +76,24 @@ public class controladorMenuBar  implements ActionListener{
             DbPacienteVM dbPacienteVM = new DbPacienteVM();
             controladorPacienteVM ctrPAVM = new controladorPacienteVM(paVM, dbPacienteVM,frmConP);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            frmConP.txtIdUs.setVisible(false);
+            frmConP.txtIdUsVM.setVisible(false);
             ctrPAVM.iniciar();
         } 
-        if (e.getSource() == frmConP.jMenuUsuarios) {
+        if (e.getSource() == frmConP.jMenuItemUsuarioM) {
             Usuario us = new Usuario();
             DbUsuario dbUsuario = new DbUsuario();
             controladorUsuario ctrUs = new controladorUsuario(us, frmConP, dbUsuario);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "Usuario");
-            frmConP.txtIdUs.setVisible(false);
+            frmConP.txtIdUsVM.setVisible(false);
             ctrUs.iniciar();
+        } 
+        if (e.getSource() == frmConP.jMenuItemUsuario) {
+            UsuarioVM us = new UsuarioVM();
+            DbUsuarioVM dbUsuario = new DbUsuarioVM();
+            controladorUsuarioVM ctrUsVM = new controladorUsuarioVM(us, frmConP, dbUsuario);
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
+            frmConP.txtIdUsVM.setVisible(false);
+            ctrUsVM.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosFacial) {
             TratamientoFacial tratamientoFacial= new TratamientoFacial();

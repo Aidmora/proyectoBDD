@@ -35,7 +35,7 @@ public class controladorUsuario implements ActionListener {
      public void iniciar(){
         CardLayout cardLayout = (CardLayout) frmContPrincipal.jPanelPrincipal.getLayout();
         cardLayout.show(frmContPrincipal.jPanelPrincipal, "Usuario");
-        frmContPrincipal.txtIdUs.setVisible(false);
+        frmContPrincipal.txtIdUsVM.setVisible(false);
     }
 
     
@@ -60,7 +60,7 @@ public class controladorUsuario implements ActionListener {
                 return;
             }
             if (dbUsuario.guardar(us)) {
-                JOptionPane.showMessageDialog(null, "Paciente Guardado");
+                JOptionPane.showMessageDialog(null, "Usuario Guardado");
                 limpiar();
             }else{
                 JOptionPane.showMessageDialog(null, "Error al guardar ");

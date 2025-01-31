@@ -60,6 +60,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuItemPacienteM= new javax.swing.JMenuItem();
         jMenuUsuarios = new javax.swing.JMenu();
         jMenuItemUsuario= new javax.swing.JMenuItem();
+        jMenuItemUsuarioM= new javax.swing.JMenuItem();
         // Menú Pago
         jMenuPago.setText("Pago");
         jMenuPago.setIcon(obtenerImagen(logo_Pago));
@@ -132,6 +133,10 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuUsuarios.setBackground(mColorFondoMenu);
         jMenuUsuarios.setForeground(Color.WHITE);
         jMenuUsuarios.setMaximumSize(new java.awt.Dimension(Short.MAX_VALUE, 40));
+        jMenuItemUsuario.setText("Usuario VM");
+        jMenuItemUsuarioM.setText("Usuario");
+        jMenuUsuarios.add(jMenuItemUsuarioM);
+        jMenuUsuarios.add(jMenuItemUsuario);
 
         // Añadir todos los menús al menu bar
         mbMenuBar.add(jMenuPago);
@@ -163,7 +168,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         txtEstadoUs = new javax.swing.JTextField();
         txtCorreoUs = new javax.swing.JTextField();
-        txtIdUs = new javax.swing.JTextField();
+        txtIdUsVM = new javax.swing.JTextField();
         btnBuscarUs = new javax.swing.JButton();
         listRolUs = new javax.swing.JComboBox<>();
         btnModificarUs = new javax.swing.JButton();
@@ -376,6 +381,19 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jLabel84 = new javax.swing.JLabel();
         txtCorreoElecPAVM = new javax.swing.JTextField();
         btnBuscarPaVM = new javax.swing.JButton();
+        jPanelUsuarioVM = new javax.swing.JPanel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        txtEstadoUsVM = new javax.swing.JTextField();
+        txtCorreoUsVM = new javax.swing.JTextField();
+        txtIdUs1 = new javax.swing.JTextField();
+        btnLimpiarUsVM = new javax.swing.JButton();
+        listRolUsVM = new javax.swing.JComboBox<>();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        txtNombreUsVM = new javax.swing.JTextField();
+        btnBuscarUsVM = new javax.swing.JButton();
         mbMenuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -411,8 +429,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         txtEstadoUs.setBounds(150, 280, 140, 26);
         jPanelUsuario.add(txtCorreoUs);
         txtCorreoUs.setBounds(400, 190, 180, 26);
-        jPanelUsuario.add(txtIdUs);
-        txtIdUs.setBounds(0, 10, 10, 26);
+        jPanelUsuario.add(txtIdUsVM);
+        txtIdUsVM.setBounds(0, 10, 10, 26);
 
         btnBuscarUs.setText("Buscar");
         jPanelUsuario.add(btnBuscarUs);
@@ -1433,6 +1451,62 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal.add(jPanelPacienteVM, "PacienteVM");
 
+        jPanelUsuarioVM.setBackground(new java.awt.Color(204, 255, 255));
+        jPanelUsuarioVM.setLayout(null);
+
+        jLabel87.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel87.setText("Correo Electrónico");
+        jPanelUsuarioVM.add(jLabel87);
+        jLabel87.setBounds(400, 170, 150, 16);
+
+        jLabel88.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel88.setText("Estado");
+        jPanelUsuarioVM.add(jLabel88);
+        jLabel88.setBounds(150, 260, 70, 16);
+        jPanelUsuarioVM.add(txtEstadoUsVM);
+        txtEstadoUsVM.setBounds(150, 280, 140, 26);
+        jPanelUsuarioVM.add(txtCorreoUsVM);
+        txtCorreoUsVM.setBounds(400, 190, 180, 26);
+        jPanelUsuarioVM.add(txtIdUs1);
+        txtIdUs1.setBounds(0, 10, 10, 26);
+
+        btnLimpiarUsVM.setText("Limpiar");
+        jPanelUsuarioVM.add(btnLimpiarUsVM);
+        btnLimpiarUsVM.setBounds(320, 410, 80, 27);
+
+        listRolUsVM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario", "Médico" }));
+        listRolUsVM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listRolUsVMActionPerformed(evt);
+            }
+        });
+        jPanelUsuarioVM.add(listRolUsVM);
+        listRolUsVM.setBounds(400, 280, 180, 26);
+
+        jLabel89.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel89.setText("USUARIOS");
+        jPanelUsuarioVM.add(jLabel89);
+        jLabel89.setBounds(290, 130, 140, 22);
+
+        jLabel90.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel90.setText("Rol");
+        jPanelUsuarioVM.add(jLabel90);
+        jLabel90.setBounds(400, 260, 70, 16);
+
+        jLabel92.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel92.setText("Nombre");
+        jPanelUsuarioVM.add(jLabel92);
+        jLabel92.setBounds(150, 170, 70, 16);
+        jPanelUsuarioVM.add(txtNombreUsVM);
+        txtNombreUsVM.setBounds(150, 190, 140, 26);
+
+        btnBuscarUsVM.setText("Buscar");
+        jPanelUsuarioVM.add(btnBuscarUsVM);
+        btnBuscarUsVM.setBounds(320, 360, 80, 27);
+
+        jPanelPrincipal.add(jPanelUsuarioVM, "UsuarioVM");
+
         getContentPane().add(jPanelPrincipal, java.awt.BorderLayout.CENTER);
         setJMenuBar(mbMenuBar);
 
@@ -1515,6 +1589,10 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoMAActionPerformed
 
+    private void listRolUsVMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listRolUsVMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listRolUsVMActionPerformed
+
     private void txtEstadoMAActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
     }//
@@ -1553,6 +1631,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnBuscarTC;
     public javax.swing.JButton btnBuscarTF;
     public javax.swing.JButton btnBuscarUs;
+    public javax.swing.JButton btnBuscarUsVM;
     public javax.swing.JButton btnEliminarCMN;
     public javax.swing.JButton btnEliminarCMS;
     public javax.swing.JButton btnEliminarMA;
@@ -1583,6 +1662,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JButton btnLimpiarPaVM;
     public javax.swing.JButton btnLimpiarTC;
     public javax.swing.JButton btnLimpiarTF;
+    public javax.swing.JButton btnLimpiarUsVM;
     public javax.swing.JButton btnModificarCMN;
     public javax.swing.JButton btnModificarCMS;
     public javax.swing.JButton btnModificarMA;
@@ -1686,7 +1766,12 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel92;
     public javax.swing.JPanel jPanelCMNorte;
     public javax.swing.JPanel jPanelCMSur;
     private javax.swing.JPanel jPanelMedicoActivo;
@@ -1700,9 +1785,11 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTCorporal;
     public javax.swing.JPanel jPanelTFacial;
     public javax.swing.JPanel jPanelUsuario;
+    public javax.swing.JPanel jPanelUsuarioVM;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JComboBox<String> listRolUs;
+    public javax.swing.JComboBox<String> listRolUsVM;
     private javax.swing.JMenuBar mbMenuBar;
     public javax.swing.JSpinner spinHoraN;
     public javax.swing.JSpinner spinHoraS;
@@ -1727,16 +1814,19 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField txtCorreoMA;
     public javax.swing.JTextField txtCorreoMI;
     public javax.swing.JTextField txtCorreoUs;
+    public javax.swing.JTextField txtCorreoUsVM;
     public javax.swing.JTextField txtDireccionMA;
     public javax.swing.JTextField txtDireccionMI;
     public javax.swing.JTextField txtEstadoMA;
     public javax.swing.JTextField txtEstadoMI;
     public javax.swing.JTextField txtEstadoPP;
     public javax.swing.JTextField txtEstadoUs;
+    public javax.swing.JTextField txtEstadoUsVM;
     public javax.swing.JTextField txtHoraPR;
     public javax.swing.JTextField txtIdPP;
     public javax.swing.JTextField txtIdPR;
-    public javax.swing.JTextField txtIdUs;
+    public javax.swing.JTextField txtIdUs1;
+    public javax.swing.JTextField txtIdUsVM;
     public javax.swing.JTextField txtMetodoPR;
     public javax.swing.JTextField txtMinutoPR;
     public javax.swing.JTextField txtNombre1;
@@ -1747,6 +1837,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JTextField txtNombreTC;
     public javax.swing.JTextField txtNombreTF;
     public javax.swing.JTextField txtNombreUs;
+    public javax.swing.JTextField txtNombreUsVM;
     public javax.swing.JPasswordField txtNuevaPassUs;
     public javax.swing.JTextField txtNumCedulaMI;
     public javax.swing.JTextField txtNumTel1;
@@ -1786,6 +1877,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem jMenuItemPacienteM;
     public javax.swing.JMenu jMenuUsuarios;
     public javax.swing.JMenuItem jMenuItemUsuario;
+    public javax.swing.JMenuItem jMenuItemUsuarioM;
     
     
     public String logo_Paciente = "/imagenes/paciente.png";
