@@ -41,6 +41,9 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuItemPagoPendienteVM = new javax.swing.JMenuItem();
         jMenuItemPagoRealizadoVM = new javax.swing.JMenuItem();
         
+        //Menú Auditoría
+        jMenuAuditoria = new javax.swing.JMenu();
+        jMenuItemAuditoria= new javax.swing.JMenuItem();
         // Menú principal de "Medicos"
         jMenuMedicos = new javax.swing.JMenu();
         jMenuItemMedicoActivos = new javax.swing.JMenuItem();
@@ -88,12 +91,21 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         jMenuMedicos.setBackground(mColorFondoMenu);
         jMenuMedicos.setForeground(Color.WHITE);
         jMenuMedicos.setMaximumSize(new java.awt.Dimension(Short.MAX_VALUE, 40));
-        
+
         jMenuItemMedicoActivos.setText("Activos");
         jMenuItemMedicoInactivos.setText("Inactivos");
         jMenuMedicos.add(jMenuItemMedicoActivos);
         jMenuMedicos.add(jMenuItemMedicoInactivos);
         
+        //Menú Auditoria
+        jMenuAuditoria.setText("Auditoría");
+        jMenuAuditoria.setIcon(obtenerImagen(logo_Auditoria));
+        jMenuAuditoria.setOpaque(true);
+        jMenuAuditoria.setBackground(mColorFondoMenu);
+        jMenuAuditoria.setForeground(Color.WHITE);
+        jMenuAuditoria.setMaximumSize(new java.awt.Dimension(Short.MAX_VALUE, 40));
+        jMenuItemAuditoria.setText("Auditoría");
+        jMenuAuditoria.add(jMenuItemAuditoria);
         // Menú Cita Medica
         jMenuCitaMedica.setText("Cita Medica");
         jMenuCitaMedica.setIcon(obtenerImagen(logo_CitaMedica));
@@ -152,6 +164,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         mbMenuBar.add(jMenuTratamientos);
         mbMenuBar.add(jMenuPaciente);
         mbMenuBar.add(jMenuUsuarios);
+        mbMenuBar.add(jMenuAuditoria);
         
     }
     private Icon obtenerImagen(String ruta){
@@ -430,6 +443,10 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
         btnBuscarPRVM = new javax.swing.JButton();
         txtIdPRVM = new javax.swing.JTextField();
         jLabel103 = new javax.swing.JLabel();
+        jPanelAuditoria = new javax.swing.JPanel();
+        jLabel106 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableAud = new javax.swing.JTable();
         mbMenuBar = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1675,6 +1692,33 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal.add(jPanelPagoRVM, "PagoRVM");
 
+        jPanelAuditoria.setBackground(new java.awt.Color(204, 255, 255));
+        jPanelAuditoria.setLayout(null);
+
+        jLabel106.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel106.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel106.setText("AUDITORÍA");
+        jPanelAuditoria.add(jLabel106);
+        jLabel106.setBounds(290, 130, 140, 22);
+
+        jTableAud.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTableAud);
+
+        jPanelAuditoria.add(jScrollPane3);
+        jScrollPane3.setBounds(30, 170, 710, 270);
+
+        jPanelPrincipal.add(jPanelAuditoria, "Auditoria");
+
         getContentPane().add(jPanelPrincipal, java.awt.BorderLayout.CENTER);
         setJMenuBar(mbMenuBar);
 
@@ -1870,6 +1914,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1967,6 +2012,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    public javax.swing.JPanel jPanelAuditoria;
     public javax.swing.JPanel jPanelCMNorte;
     public javax.swing.JPanel jPanelCMSur;
     private javax.swing.JPanel jPanelMedicoActivo;
@@ -1985,6 +2031,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JPanel jPanelUsuarioVM;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JTable jTableAud;
     public javax.swing.JComboBox<String> listRolUs;
     public javax.swing.JComboBox<String> listRolUsVM;
     private javax.swing.JMenuBar mbMenuBar;
@@ -2086,6 +2134,8 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem jMenuItemUsuario;
     public javax.swing.JMenuItem jMenuItemUsuarioM;
     
+    public javax.swing.JMenu jMenuAuditoria;
+    public javax.swing.JMenuItem jMenuItemAuditoria;
     
     public String logo_Paciente = "/imagenes/paciente.png";
     public String logo_Usuario= "/imagenes/usuario.png";
@@ -2093,6 +2143,7 @@ public class frmContenedorPrincipal extends javax.swing.JFrame {
     public String logo_CitaMedica= "/imagenes/citaMedica.png";
     public String logo_Medico= "/imagenes/medico.png";
     public String logo_Pago= "/imagenes/pago.png";
+    public String logo_Auditoria= "/imagenes/auditoria.png";
     public Color mColorFondoMenu= new Color(150,250,220);
 
 

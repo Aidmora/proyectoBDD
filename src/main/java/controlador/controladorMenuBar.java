@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import modelo.CitaMedicaNorte;
 import modelo.CitaMedicaSur;
+import modelo.DbAuditoria;
 import modelo.DbCitaMedicaNorte;
 import modelo.DbCitaMedicaSur;
 import modelo.DbMedicoActivo;
@@ -50,6 +51,7 @@ public class controladorMenuBar  implements ActionListener{
     
     public controladorMenuBar(frmContenedorPrincipal frmContenedorPrincipal){
         this.frmConP=frmContenedorPrincipal;
+        this.frmConP.jMenuItemAuditoria.addActionListener(this);
         this.frmConP.jMenuItemPaciente.addActionListener(this);
         this.frmConP.jMenuItemUsuarioM.addActionListener(this);
         this.frmConP.jMenuItemUsuario.addActionListener(this);
@@ -166,6 +168,14 @@ public class controladorMenuBar  implements ActionListener{
             controladorPagoRealizadoVM ctrPrVM = new controladorPagoRealizadoVM(pr, frmConP, dbPR);
             CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
             ctrPrVM.iniciar();      
+        }
+        if (e.getSource() == frmConP.jMenuItemAuditoria) {
+            DbAuditoria dbAuditoria = new DbAuditoria();
+            ControladorAuditoria contrAud = new ControladorAuditoria(dbAuditoria, frmConP);    
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
+            contrAud.iniciar();
+            
+            
         }
     
     }
