@@ -4,30 +4,26 @@
  */
 package modelo;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  *
- * @author LENOVO.USER
+ * @author User
  */
-public class DbCitaMedicaSur extends Conexion{
-     //guardar 
-    public boolean guardar (CitaMedicaSur cms){
+public class DbPagoPendiente extends Conexion {
+    //guardar
+    public boolean guardar (PagoPendiente p){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "INSERT INTO CitaMedica_Sur@dbl132 (codigo_cita,comentario,"
-                + "fecha_cita,hora_cita, sucursal)"
-                + "VALUES (?,?,?,?,?)";
+        String sql= "INSERT INTO PagoPendiente (codigo_pendiente,cantidad_cancelar,fecha_limite,"
+                + "estado)"
+                + "VALUES (?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, cms.getCodigoCita());
-            ps.setString(2, cms.getComentario());
-            ps.setDate(3, cms.getFechaCita());
-            ps.setTimestamp(4, cms.getHoraCita());
-            ps.setString(5, cms.getSucursal());
+            ps.setInt(1, p.getId());
+            ps.setDouble(2, p.getCantidad());
+            ps.setDate(3, p.getFecha());
+            ps.setInt(4, p.getEstado());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -42,18 +38,20 @@ public class DbCitaMedicaSur extends Conexion{
         }
     }
     //modificar
-    public boolean modificar (CitaMedicaSur cms){
+    public boolean modificar (PagoPendiente p){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "UPDATE CitaMedica_Sur@dbl132 SET comentario= ?,"
-                + "fecha_cita= ?,hora_cita= ?, sucursal=? WHERE codigo_cita= ?";
+        String sql = "UPDATE PagoPendiente "
+           + "SET cantidad_cancelar = ?, "
+           + "    fecha_limite = ?, "
+           + "    estado = ? "
+           + "WHERE codigo_pendiente = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, cms.getComentario());
-            ps.setDate(2, cms.getFechaCita());
-            ps.setTimestamp(3, cms.getHoraCita());
-            ps.setString(4, cms.getSucursal());
-            ps.setInt(5, cms.getCodigoCita());
+            ps.setDouble(1, p.getCantidad());
+            ps.setDate(2, p.getFecha());
+            ps.setInt(3, p.getEstado());
+            ps.setInt(4, p.getId());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -67,44 +65,45 @@ public class DbCitaMedicaSur extends Conexion{
             }
         }
     }
-    //eliminar 
-    public boolean eliminar (CitaMedicaSur cms){
-        PreparedStatement ps; 
-        Connection con= getConexion();
-        String sql= "DELETE FROM CitaMedica_Sur@dbl132 WHERE codigo_cita= ?";
-        try {
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, cms.getCodigoCita());
-            ps.execute();
-            return true;
-        } catch (SQLException e) {
-            System.err.println(e);
-            return false;
-        }finally{
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
-        }
-    }
-    //buscar 
-    public boolean buscar (CitaMedicaSur cms){
+    
+    //buscar
+    public boolean buscar (PagoPendiente p){
         PreparedStatement ps; 
         ResultSet rs;
         Connection con= getConexion();
-        String sql= "SELECT * FROM CitaMedica_Sur@dbl132 WHERE codigo_cita= ?";
+        String sql= "SELECT * FROM PagoPendiente WHERE codigo_pendiente = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, cms.getCodigoCita());
+            ps.setInt(1, p.getId());
             rs= ps.executeQuery();
             if (rs.next()) {
-                cms.setCodigoCita(Integer.parseInt(rs.getString("codigo_cita")));
-                cms.setComentario(rs.getString("comentario"));
-                cms.setFechaCita(rs.getDate("fecha_cita"));
-                cms.setHoraCita(rs.getTimestamp("hora_cita"));
-                cms.setSucursal(rs.getString("sucursal"));
+                p.setId(rs.getInt("codigo_pendiente"));
+                p.setCantidad(rs.getDouble("cantidad_cancelar"));
+                p.setEstado(rs.getInt("estado"));
+                p.setFecha(rs.getDate("fecha_limite"));
             }
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        }finally{
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    
+    //eliminar 
+    public boolean eliminar (PagoPendiente p){
+        PreparedStatement ps; 
+        Connection con= getConexion();
+        String sql= "DELETE FROM PagoPendiente WHERE codigo_pendiente = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, p.getId());
+            ps.execute();
             return true;
         } catch (SQLException e) {
             System.err.println(e);

@@ -4,8 +4,12 @@
 
 package com.mycompany.proyectobdd;
 
+import controlador.controladorLogin;
 import controlador.controladorMenuBar;
+import modelo.DbUsuario;
+import modelo.Usuario;
 import vista.frmContenedorPrincipal;
+import vista.frmLogin;
 
 
 
@@ -16,11 +20,17 @@ import vista.frmContenedorPrincipal;
 public class ProyectoBDD {
 
     public static void main(String[] args) {
-        System.out.println("Hola");
+        frmLogin frmLogin = new frmLogin();
+        Usuario us = new Usuario();
+        DbUsuario dbUsuario = new DbUsuario();
+        frmLogin.setVisible(true);
         frmContenedorPrincipal frmContenedorPrincipal= new frmContenedorPrincipal();
+        controladorLogin contLogin = new controladorLogin(us,frmLogin,dbUsuario, frmContenedorPrincipal);
+        contLogin.iniciar();
+
         controladorMenuBar conBar= new controladorMenuBar(frmContenedorPrincipal);
-        conBar.iniciar();
-        frmContenedorPrincipal.setVisible(true);
+        //conBar.iniciar();
+        //frmContenedorPrincipal.setVisible(true);z
 
     }
 } 

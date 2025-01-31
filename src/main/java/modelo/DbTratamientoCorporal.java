@@ -17,7 +17,7 @@ public class DbTratamientoCorporal extends Conexion{
     public boolean guardar (TratamientoCorporal tf){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "INSERT INTO Tratamiento_corporal (codigo_tratamiento, nombre_tratamiento,precio,"
+        String sql= "INSERT INTO Tratamiento_corporal@dbl132 (codigo_tratamiento, nombre_tratamiento,precio,"
                 + "tipo)"
                 + "VALUES (?,?,?,?)";
         try {
@@ -43,7 +43,7 @@ public class DbTratamientoCorporal extends Conexion{
    public boolean modificar (TratamientoCorporal tf){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "UPDATE Tratamiento_corporal SET nombre_tratamiento= ?,precio= ?,"
+        String sql= "UPDATE Tratamiento_corporal@dbl132 SET nombre_tratamiento= ?,precio= ?,"
                 + "tipo= ?  WHERE codigo_tratamiento= ?";
         try {
             ps = con.prepareStatement(sql);
@@ -68,7 +68,7 @@ public class DbTratamientoCorporal extends Conexion{
    public boolean eliminar (TratamientoCorporal tf){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "DELETE FROM Tratamiento_corporal  WHERE codigo_tratamiento= ?";
+        String sql= "DELETE FROM Tratamiento_corporal@dbl132  WHERE codigo_tratamiento= ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, tf.getCodigoTratamiento());
@@ -90,7 +90,7 @@ public class DbTratamientoCorporal extends Conexion{
         PreparedStatement ps; 
         ResultSet rs;
         Connection con= getConexion();
-        String sql= "SELECT * FROM Tratamiento_corporal  WHERE codigo_tratamiento= ?";
+        String sql= "SELECT * FROM Tratamiento_corporal@dbl132  WHERE codigo_tratamiento= ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, tf.getCodigoTratamiento());

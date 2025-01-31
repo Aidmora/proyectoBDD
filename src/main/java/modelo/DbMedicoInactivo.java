@@ -17,7 +17,7 @@ public class DbMedicoInactivo extends Conexion {
     public boolean guardar (MedicoInactivo mi){
         PreparedStatement ps; 
         Connection con = getConexion();
-        String sql= "INSERT INTO Medico_inactivo (numero_cedula_med,nombre,fecha_contratacion,"
+        String sql= "INSERT INTO Medico_inactivo@dbl132 (numero_cedula_med,nombre,fecha_contratacion,"
                 + "numero_telefono,correo_electronico,estado,ubicacion)"
                 + "VALUES (?,?,?,?,?,?,?)";
         try {
@@ -46,7 +46,7 @@ public class DbMedicoInactivo extends Conexion {
     public boolean modificar (MedicoInactivo mi){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql = "UPDATE Medico_inactivo "
+        String sql = "UPDATE Medico_inactivo@dbl132 "
            + "SET nombre = ?, "
            + "    fecha_contratacion = ?, "
            + "    correo_electronico = ?, "
@@ -79,7 +79,7 @@ public class DbMedicoInactivo extends Conexion {
     public boolean eliminar (MedicoInactivo mi){
         PreparedStatement ps; 
         Connection con= getConexion();
-        String sql= "DELETE FROM Medico_inactivo WHERE numero_cedula_med LIKE ?";
+        String sql= "DELETE FROM Medico_inactivo@dbl132 WHERE numero_cedula_med LIKE ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, "%"+mi.getNumeroCedula()+"%");
@@ -101,7 +101,7 @@ public class DbMedicoInactivo extends Conexion {
         PreparedStatement ps; 
         ResultSet rs;
         Connection con= getConexion();
-        String sql= "SELECT * FROM Medico_inactivo WHERE numero_cedula_med LIKE ?";
+        String sql= "SELECT * FROM Medico_inactivo@dbl132 WHERE numero_cedula_med LIKE ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, "%"+mi.getNumeroCedula()+"%");
