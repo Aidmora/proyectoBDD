@@ -9,19 +9,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.CitaMedicaNorte;
 import modelo.CitaMedicaSur;
+import modelo.DbCitaMedicaNorte;
 import modelo.DbCitaMedicaSur;
 import modelo.DbMedicoActivo;
 import modelo.DbMedicoInactivo;
+import modelo.DbPaciente;
 import modelo.DbPagoPendiente;
 import modelo.DbPagoRealizado;
 import modelo.DbTratamientoCorporal;
+import modelo.DbTratamientoFacial;
 import modelo.DbUsuario;
 import modelo.MedicoActivo;
 import modelo.MedicoInactivo;
+import modelo.Paciente;
 import modelo.PagoPendiente;
 import modelo.PagoRealizado;
 import modelo.TratamientoCorporal;
+import modelo.TratamientoFacial;
 import modelo.Usuario;
 import vista.frmContenedorPrincipal;
 
@@ -54,8 +60,10 @@ public class controladorMenuBar  implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == frmConP.jMenuPaciente) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "Paciente");
+            Paciente pa= new Paciente();
+            DbPaciente dbPaciente= new DbPaciente();
+            controladorPaciente ctrPa= new controladorPaciente(pa, dbPaciente, frmConP);
+            ctrPa.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuUsuarios) {
             Usuario us = new Usuario();
@@ -67,8 +75,10 @@ public class controladorMenuBar  implements ActionListener{
             ctrUs.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosFacial) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "TFacial");
+            TratamientoFacial tratamientoFacial= new TratamientoFacial();
+            DbTratamientoFacial dbTratamientoFacial= new DbTratamientoFacial();
+            controladorTratamientoFacial ctrF= new controladorTratamientoFacial(tratamientoFacial, dbTratamientoFacial, frmConP);
+            ctrF.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemTratamientosCorporal) {
             TratamientoCorporal tratamientoCorporal =  new TratamientoCorporal();
@@ -91,8 +101,10 @@ public class controladorMenuBar  implements ActionListener{
             ctrMI.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaNorte) {
-            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
-            cardLayout.show(frmConP.jPanelPrincipal, "CMNorte");
+            CitaMedicaNorte citaMedicaNorte= new CitaMedicaNorte();
+            DbCitaMedicaNorte dbCitaMedicaNorte= new DbCitaMedicaNorte();
+            controladorCitaMedicaNorte conCitaMedicaNorte= new controladorCitaMedicaNorte(citaMedicaNorte, dbCitaMedicaNorte, frmConP);
+            conCitaMedicaNorte.iniciar(); 
         } 
         if (e.getSource() == frmConP.jMenuItemCitaMedicaSur) {
             CitaMedicaSur citaMedicaSur= new CitaMedicaSur();
