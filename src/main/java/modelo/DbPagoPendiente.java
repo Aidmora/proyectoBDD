@@ -64,6 +64,7 @@ public class DbPagoPendiente extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
     
     //buscar
@@ -81,11 +82,11 @@ public class DbPagoPendiente extends Conexion {
                 p.setCantidad(rs.getDouble("cantidad_cancelar"));
                 p.setEstado(rs.getInt("estado"));
                 p.setFecha(rs.getDate("fecha_limite"));
+                return true;
             }
-            return true;
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }finally{
             try {
                 con.close();
@@ -93,6 +94,7 @@ public class DbPagoPendiente extends Conexion {
                 System.err.println(e);
             }
         }
+        return false;
     }
     
     //eliminar 

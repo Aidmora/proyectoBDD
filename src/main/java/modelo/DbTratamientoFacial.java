@@ -101,11 +101,12 @@ public class DbTratamientoFacial extends Conexion {
                 tf.setNombreTratamiento(rs.getString("nombre_tratamiento"));
                 tf.setPrecio(rs.getBigDecimal("precio"));
                 tf.setTipo(rs.getString("tipo"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }finally{
             try {
                 con.close();
@@ -113,5 +114,6 @@ public class DbTratamientoFacial extends Conexion {
                 System.err.println(e);
             }
         }
+        return false;
     }
 }

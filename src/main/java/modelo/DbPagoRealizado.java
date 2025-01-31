@@ -87,11 +87,12 @@ public class DbPagoRealizado extends Conexion {
                 p.setMetodo(rs.getString("metodo_pago"));
                 p.setFecha(rs.getDate("fecha_cancelacion"));
                 p.setHora(rs.getTimestamp("hora_cancelacion"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         } finally {
             try {
                 con.close();
@@ -99,6 +100,7 @@ public class DbPagoRealizado extends Conexion {
                 System.err.println(e);
             }
         }
+        return false;
     }
 
     public boolean eliminar(PagoRealizado p) {

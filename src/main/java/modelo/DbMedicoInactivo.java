@@ -41,6 +41,7 @@ public class DbMedicoInactivo extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
     //eliminar
     public boolean modificar (MedicoInactivo mi){
@@ -74,6 +75,7 @@ public class DbMedicoInactivo extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
     //eliminar
     public boolean eliminar (MedicoInactivo mi){
@@ -95,6 +97,7 @@ public class DbMedicoInactivo extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
     //buscar
     public boolean buscar (MedicoInactivo mi){
@@ -114,11 +117,12 @@ public class DbMedicoInactivo extends Conexion {
                 mi.setCorreoElectronico(rs.getString("correo_electronico"));
                 mi.setEstado(rs.getInt("estado"));
                 mi.setUbicacion(rs.getString("ubicacion"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+           
         }finally{
             try {
                 con.close();
@@ -126,5 +130,6 @@ public class DbMedicoInactivo extends Conexion {
                 System.err.println(e);
             }
         }
+         return false;
     }
 }

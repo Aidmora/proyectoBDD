@@ -16,6 +16,7 @@ import modelo.DbCitaMedicaSur;
 import modelo.DbMedicoActivo;
 import modelo.DbMedicoInactivo;
 import modelo.DbPaciente;
+import modelo.DbPacienteVM;
 import modelo.DbPagoPendiente;
 import modelo.DbPagoRealizado;
 import modelo.DbTratamientoCorporal;
@@ -24,6 +25,7 @@ import modelo.DbUsuario;
 import modelo.MedicoActivo;
 import modelo.MedicoInactivo;
 import modelo.Paciente;
+import modelo.PacienteVM;
 import modelo.PagoPendiente;
 import modelo.PagoRealizado;
 import modelo.TratamientoCorporal;
@@ -42,8 +44,9 @@ public class controladorMenuBar  implements ActionListener{
     
     public controladorMenuBar(frmContenedorPrincipal frmContenedorPrincipal){
         this.frmConP=frmContenedorPrincipal;
-        this.frmConP.jMenuPaciente.addActionListener(this);
+        this.frmConP.jMenuItemPaciente.addActionListener(this);
         this.frmConP.jMenuUsuarios.addActionListener(this);
+        this.frmConP.jMenuItemPacienteM.addActionListener(this);
         this.frmConP.jMenuItemTratamientosCorporal.addActionListener(this);
         this.frmConP.jMenuItemTratamientosFacial.addActionListener(this);
         this.frmConP.jMenuItemMedicoActivos.addActionListener(this);
@@ -59,11 +62,19 @@ public class controladorMenuBar  implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == frmConP.jMenuPaciente) {
+        if (e.getSource() == frmConP.jMenuItemPacienteM) {
             Paciente pa= new Paciente();
             DbPaciente dbPaciente= new DbPaciente();
             controladorPaciente ctrPa= new controladorPaciente(pa, dbPaciente, frmConP);
             ctrPa.iniciar();
+        } 
+        if (e.getSource() == frmConP.jMenuItemPaciente) {
+            PacienteVM paVM = new PacienteVM();
+            DbPacienteVM dbPacienteVM = new DbPacienteVM();
+            controladorPacienteVM ctrPAVM = new controladorPacienteVM(paVM, dbPacienteVM,frmConP);
+            CardLayout cardLayout = (CardLayout) frmConP.jPanelPrincipal.getLayout();
+            frmConP.txtIdUs.setVisible(false);
+            ctrPAVM.iniciar();
         } 
         if (e.getSource() == frmConP.jMenuUsuarios) {
             Usuario us = new Usuario();

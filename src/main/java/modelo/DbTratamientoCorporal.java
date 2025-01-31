@@ -100,11 +100,12 @@ public class DbTratamientoCorporal extends Conexion{
                 tf.setNombreTratamiento(rs.getString("nombre_tratamiento"));
                 tf.setPrecio(rs.getBigDecimal("precio"));
                 tf.setTipo("CORPORAL");
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }finally{
             try {
                 con.close();
@@ -112,5 +113,6 @@ public class DbTratamientoCorporal extends Conexion{
                 System.err.println(e);
             }
         }
+        return false;
     }
 }

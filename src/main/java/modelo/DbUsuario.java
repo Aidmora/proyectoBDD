@@ -106,11 +106,12 @@ public class DbUsuario extends Conexion {
                 u.setCorreoElectronico(rs.getString("correo_electronico"));
                 u.setEstado(rs.getInt("estado"));
                 u.setRol(rs.getString("rol"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }finally{
             try {
                 con.close();
@@ -118,6 +119,7 @@ public class DbUsuario extends Conexion {
                 System.err.println(e);
             }
         }
+        return false;
     }
     
     //buscar para ingresar sesion

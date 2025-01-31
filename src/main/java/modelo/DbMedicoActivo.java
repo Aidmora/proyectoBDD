@@ -40,6 +40,7 @@ public class DbMedicoActivo extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
 
     //eliminar
@@ -62,6 +63,7 @@ public class DbMedicoActivo extends Conexion {
                 System.err.println(e);
             }
         }
+
     }
     
     
@@ -88,7 +90,7 @@ public class DbMedicoActivo extends Conexion {
             return false;
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         } finally {
             try {
                 con.close();
@@ -96,6 +98,7 @@ public class DbMedicoActivo extends Conexion {
                 System.err.println(e);
             }
         }
+        return false;
     }
 
     //modificar
@@ -131,6 +134,7 @@ public class DbMedicoActivo extends Conexion {
                 System.err.println(e);
             }
         }
+        
     }
 
 }

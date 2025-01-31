@@ -40,6 +40,7 @@ public class DbCitaMedicaSur extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //modificar
     public boolean modificar (CitaMedicaSur cms){
@@ -66,6 +67,7 @@ public class DbCitaMedicaSur extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //eliminar 
     public boolean eliminar (CitaMedicaSur cms){
@@ -87,6 +89,7 @@ public class DbCitaMedicaSur extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //buscar 
     public boolean buscar (CitaMedicaSur cms){
@@ -104,11 +107,12 @@ public class DbCitaMedicaSur extends Conexion{
                 cms.setFechaCita(rs.getDate("fecha_cita"));
                 cms.setHoraCita(rs.getTimestamp("hora_cita"));
                 cms.setSucursal(rs.getString("sucursal"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            
         }finally{
             try {
                 con.close();
@@ -116,5 +120,6 @@ public class DbCitaMedicaSur extends Conexion{
                 System.err.println(e);
             }
         }
+        return false;
     }
 }

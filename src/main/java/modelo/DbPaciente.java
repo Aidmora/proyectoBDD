@@ -40,6 +40,7 @@ public class DbPaciente extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //eliminar
     public boolean modificar (Paciente p){
@@ -72,6 +73,7 @@ public class DbPaciente extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //eliminar
     public boolean eliminar (Paciente p){
@@ -93,6 +95,7 @@ public class DbPaciente extends Conexion{
                 System.err.println(e);
             }
         }
+        
     }
     //buscar
     public boolean buscar (Paciente p){
@@ -111,11 +114,11 @@ public class DbPaciente extends Conexion{
                 p.setCorreoElectronico(rs.getString("correo_electronico"));
                 p.setNombre(rs.getString("nombre"));
                 p.setUbicacion(rs.getString("ubicacion"));
+                return true;
             }
-            return true;
+            
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
         }finally{
             try {
                 con.close();
@@ -123,5 +126,6 @@ public class DbPaciente extends Conexion{
                 System.err.println(e);
             }
         }
+        return false;
     }
 }
